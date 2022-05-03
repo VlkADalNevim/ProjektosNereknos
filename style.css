@@ -1,0 +1,62 @@
+body {
+
+}
+
+/*----------------------LOGO----------------------*/
+.logoContainer {
+    width: auto;
+    border: 1px solid red;
+    padding: 40px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+.logo {
+
+}
+
+/*----------------------Topnav----------------------*/
+.topnav {
+    width: auto;
+    border: 1px solid red;
+    padding: 0px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+.openRightMenuButton {
+    float: left;
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid rgb(0, 255, 255);
+    height: 45px;
+    width: 50px;
+}
+.openRightMenuButton:hover {
+    border: 1px solid rgb(45, 150, 150);
+}
+.loginButton {
+    float: right;
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid rgb(0, 255, 255);
+    height: 45px;
+    width: 90px;
+}
+.loginButton:hover {
+    border: 1px solid rgb(45, 150, 150);
+}
+
+/*----------------------Search----------------------*/
+.searchArea {
+    width: auto;
+    border: 1px solid red;
+    padding: 250px;
+    text-align: center;
+}
+.search { 
+    border-radius: 50px;
+    border: 1px solid rgb(0, 255, 255);
+    height: 40px;
+    width: 500px;
+    text-align: center;
+}
