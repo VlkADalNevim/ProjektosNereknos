@@ -46,6 +46,44 @@ body {
     border: 1px solid rgb(45, 150, 150);
 }
 
+/*----------Dropdown----------*/
+
+.dropbtn {
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid rgb(0, 255, 255);
+    height: 45px;
+    width: 50px;
+}
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  .dropdown-content a:hover {
+    background-color: #ddd;
+}
+  .dropdown:hover .dropdown-content {
+    display: block;
+}
+  .dropdown:hover .dropbtn {
+    border: 1px solid rgb(45, 150, 150);
+}
+
 /*----------------------Search----------------------*/
 .searchArea {
     width: auto;
@@ -59,4 +97,137 @@ body {
     height: 40px;
     width: 500px;
     text-align: center;
+}
+
+/*----------------------LoginForm----------------------*/
+
+.backarrow {
+    float: left;
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid rgb(0, 255, 255);
+    height: 45px;
+    width: 50px;
+
+}
+.backarrow:hover {
+    border: 1px solid rgb(45, 150, 150);
+}
+
+.login {
+    width: 600px;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+    border-radius: 5%;
+}
+.login h1 {
+    text-align: center;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.login form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.login form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #8BDAEB;
+    color: #ffffff;
+    border-radius: 50%;
+}
+.login form input[type="password"], .login form input[type="text"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    border-radius: 1%;
+}
+.login form input[type="submit"] {
+    width: 50%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #8BDAEB;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover {
+  background-color: #8BDAEB;
+    transition: background-color 0.2s;
+}
+
+/*----------------------RegisterForm----------------------*/
+.backarrowregister {
+    float: left;
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid rgb(0, 255, 255);
+    height: 45px;
+    width: 50px;
+
+}
+.backarrowregister:hover {
+    border: 1px solid rgb(45, 150, 150);
+}
+
+.register {
+    width: 600px;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+    border-radius: 5%;
+}
+.register h1 {
+    text-align: center;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.register form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.register form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #8BDAEB;
+    color: #ffffff;
+    border-radius: 50%;
+}
+.register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    border-radius: 1%;
+}
+.register form input[type="submit"] {
+    width: 50%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #8BDAEB;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.register form input[type="submit"]:hover {
+  background-color: #8BDAEB;
+    transition: background-color 0.2s;
 }

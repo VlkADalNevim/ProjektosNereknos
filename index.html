@@ -10,16 +10,17 @@
 
 	<body>
 			<div class="logoContainer">
-					<h1>MyEntertaintmentList</h1>
+					<h1>MyEntertainmentList</h1>
 			</div>
 			<div class="topnav">
-					<button class="openRightMenuButton" onclick="openRightMenu()">&#9776;</button>
-					<button class="loginButton">Login</button>
-				<div class="sidebar" style="display:none;right:0;" id="rightMenu">
-					<button onclick="closeRightMenu()" class="closeRightMenuButton">Close &times;</button>
-					<a href="#" class="sidebarItem">Info</a>
-					<a href="#" class="sidebarItem">Support</a>
-				</div>
+					<a href="login.php"><button class="loginButton">Login</button></a>
+					<div class="dropdown">
+						<button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+						<div class="dropdown-content">
+						  <a href="#">Support</a>
+						  <a href="#">Info</a>
+						</div>
+					  </div>
 			</div>
 
 
