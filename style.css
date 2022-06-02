@@ -1,52 +1,46 @@
-body {
-
+/*----------------------Index----------------------*/
+/*--Logo--*/
+html {
+    width: auto;
+    margin:3px;
+    padding: 0px;
+    padding-left: 70px;
+    padding-right: 70px;
+    background-color: #323232;
 }
-
-/*----------------------LOGO----------------------*/
 .logoContainer {
     width: auto;
-    border: 1px solid red;
+    margin:3px;
     padding: 40px;
     padding-top: 20px;
     padding-bottom: 0px;
     text-align: center;
-}
-.logo {
-
+    color: #ddd;
 }
 
-/*----------------------Topnav----------------------*/
+/*--Topnav--*/
 .topnav {
     width: auto;
-    border: 1px solid red;
+    margin:3px;
     padding: 0px;
     padding-left: 70px;
     padding-right: 70px;
 }
-.openRightMenuButton {
-    float: left;
-    border-radius: 50px;
-    background: transparent;
-    border: 1px solid rgb(0, 255, 255);
-    height: 45px;
-    width: 50px;
-}
-.openRightMenuButton:hover {
-    border: 1px solid rgb(45, 150, 150);
-}
+
 .loginButton {
     float: right;
     border-radius: 50px;
     background: transparent;
     border: 1px solid rgb(0, 255, 255);
     height: 45px;
-    width: 90px;
+    width: 5%;
+    color: #ddd;
 }
 .loginButton:hover {
     border: 1px solid rgb(45, 150, 150);
 }
 
-/*----------Dropdown----------*/
+/*--Dropdown--*/
 
 .dropbtn {
     border-radius: 50px;
@@ -54,13 +48,14 @@ body {
     border: 1px solid rgb(0, 255, 255);
     height: 45px;
     width: 50px;
+    color: #ddd;
 }
   
   .dropdown {
     position: relative;
     display: inline-block;
 }
-  .dropdown-content {
+  .dropdown-content { 
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -84,150 +79,643 @@ body {
     border: 1px solid rgb(45, 150, 150);
 }
 
-/*----------------------Search----------------------*/
+/*--Search--*/
 .searchArea {
     width: auto;
-    border: 1px solid red;
-    padding: 250px;
+    padding: 10px;
     text-align: center;
 }
 .search { 
     border-radius: 50px;
     border: 1px solid rgb(0, 255, 255);
     height: 40px;
-    width: 500px;
+    width: 40%;
     text-align: center;
+    display: flexbox;
+    background-color: #494949;
+    color: #ddd;
 }
 
+.search:hover { 
+    border: 1px solid rgb(0, 196, 196);
+}
+
+.searchButton { 
+    border-radius: 50px;
+    height: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    text-align: center;
+    display: flexbox;
+    width: 5%;
+    background-color: rgb(0, 255, 255);
+    color: #000000;
+}
+
+.searchButton:hover { 
+    border: 1px solid rgb(128, 128, 128);
+}
+
+
+.topLine {
+    padding-top: 20px;
+    border-top: 1px solid rgb(224, 224, 224);
+    width: auto;
+    text-align: center;
+    display: flexbox;
+}
+.bottomLine {
+    padding-top: 20px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    width: auto;
+    text-align: center;
+    display: flexbox;
+}
+
+/*--Results--*/
+.resultsArea {
+    margin:3px;
+    width: auto;
+    padding-bottom: 50%;
+    padding-top: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+.movieBox {
+    border: 1px solid rgb(0, 133, 133);
+    height: 50px;
+    width: 25%;
+    border-radius: 10%;
+    margin: auto;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction:row;
+}
+
+.movieBox:hover {
+    border: 1px solid rgb(0, 107, 107);
+    
+}
+.movieTitle {
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    font-size: 18px;
+    color: #ddd;
+    text-align: center;
+    align-self: flex-start;
+}
+.movieRating {
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    align-self: flex-end;
+}
+
+.spaceBetween {
+    width: 50%;
+}
+.movieHref {
+    text-decoration: none;
+    width: auto;
+}
+
+.noResult{
+    width: 50%;
+    color: #ddd;
+}
+.createNewRecordA{
+    width: 10%;
+    color: #ddd;
+    text-decoration: none;
+}
+.createNewRecord{
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 133, 133);
+    border-radius: 30%;
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+/*--Footer--*/
+.footer {
+    text-align:center;
+    padding:20px;
+    margin-top:280px;
+    color: #ddd;
+    background: #2c2c2c;
+}
+
+.footerRegister {
+    text-align:center;
+    padding:20px;
+    margin-top:280px;
+    color: #ddd;
+    background: #2c2c2c;
+}
+
+.footerLogin {
+    text-align:center;
+    padding:20px;
+    margin-top:368px;
+    color: #ddd;
+    background: #2c2c2c;
+}
 /*----------------------LoginForm----------------------*/
 
-.backarrow {
-    float: left;
+.topnavLogin {
+    width: auto;
+    margin:3px;
+    padding: 0px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.registerButtonLogin {
+    float: right;
     border-radius: 50px;
     background: transparent;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: #494949;
+    height: 45px;
+    width: 90px;
+}
+.registerButtonLogin:hover {
     border: 1px solid rgb(0, 255, 255);
+}
+    
+.backArrowlogin {
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: #494949;
     height: 45px;
     width: 50px;
 
 }
-.backarrow:hover {
-    border: 1px solid rgb(45, 150, 150);
+.backArrowlogin:hover {
+    border: 1px solid rgb(0, 255, 255);
 }
 
-.login {
-    width: 600px;
+
+.loginForm {
+    text-align:center;
+    padding:1px;
+    width: 25%;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
-    border-radius: 5%;
+    border-radius: 20px;
+    background-color: #222222;
+    color: rgb(255, 255, 255);
 }
-.login h1 {
+
+.loginForm h1 {
     text-align: center;
     font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
 }
-.login form {
-    display: flex;
+
+.loginForm form {
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgb(224, 224, 224);
 }
-.login form label {
-    display: flex;
+
+.loginForm form label {
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: #8BDAEB;
-    color: #ffffff;
-    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(0, 255, 255);
 }
-.login form input[type="password"], .login form input[type="text"] {
-    width: 310px;
-    height: 50px;
-    border: 1px solid #dee0e4;
-    margin-bottom: 20px;
-    padding: 0 15px;
-    border-radius: 1%;
+
+.loginForm form input{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    width: 65%;
+    height: 30px;
+    margin: 5px;
+    text-align: left;
+    background-color: #494949;
+    color: #ddd;
 }
-.login form input[type="submit"] {
-    width: 50%;
-    padding: 15px;
+
+.loginForm form input:hover { 
+    border: 1px solid rgb(0, 255, 255);
+}
+
+.loginButtonSubmit{
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 50px;
+    width: 40%;
+    height: 30px;
+    margin: 10px;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
     margin-top: 20px;
-    background-color: #8BDAEB;
-    border: 0;
-    cursor: pointer;
-    font-weight: bold;
     color: #ffffff;
-    transition: background-color 0.2s;
 }
-.login form input[type="submit"]:hover {
-  background-color: #8BDAEB;
-    transition: background-color 0.2s;
+
+.loginButtonSubmit:hover{
+    border: 1px solid rgb(0, 255, 255);
 }
+
+
+
+
 
 /*----------------------RegisterForm----------------------*/
-.backarrowregister {
-    float: left;
+
+.topnavRegister {
+    width: auto;
+    margin:3px;
+    padding: 0px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.loginButtonRegister {
+    float: right;
     border-radius: 50px;
     background: transparent;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: #494949;
+    height: 45px;
+    width: 90px;
+}
+.loginButtonRegister:hover {
     border: 1px solid rgb(0, 255, 255);
+}
+    
+.backArrowRegister {
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: #494949;
     height: 45px;
     width: 50px;
 
 }
-.backarrowregister:hover {
-    border: 1px solid rgb(45, 150, 150);
+.backArrowRegister:hover {
+    border: 1px solid rgb(0, 255, 255);
 }
 
-.register {
-    width: 600px;
+
+.registerForm {
+    text-align:center;
+    padding:1px;
+    width: 25%;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
-    border-radius: 5%;
+    border-radius: 20px;
+    background-color: #222222;
+    color: rgb(255, 255, 255);
 }
-.register h1 {
+
+.registerForm h1 {
     text-align: center;
     font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
 }
-.register form {
-    display: flex;
+
+.registerForm form {
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgb(224, 224, 224);
 }
-.register form label {
-    display: flex;
+
+.registerForm form label {
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: #8BDAEB;
-    color: #ffffff;
-    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(0, 255, 255);
 }
-.register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
-    width: 310px;
-    height: 50px;
-    border: 1px solid #dee0e4;
-    margin-bottom: 20px;
-    padding: 0 15px;
-    border-radius: 1%;
+
+.registerForm form input{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    width: 65%;
+    height: 30px;
+    margin: 5px;
+    text-align: left;
+    background-color: #494949;
+    color: #ddd;
 }
-.register form input[type="submit"] {
-    width: 50%;
-    padding: 15px;
+
+.registerForm form input:hover { 
+    border: 1px solid rgb(0, 255, 255);
+}
+
+.registerButtonSubmit{
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 50px;
+    width: 40%;
+    height: 30px;
+    margin: 10px;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
     margin-top: 20px;
-    background-color: #8BDAEB;
-    border: 0;
-    cursor: pointer;
-    font-weight: bold;
     color: #ffffff;
-    transition: background-color 0.2s;
 }
-.register form input[type="submit"]:hover {
-  background-color: #8BDAEB;
-    transition: background-color 0.2s;
+
+.registerButtonSubmit:hover{
+    border: 1px solid rgb(0, 255, 255);
+}
+
+
+/*----------------------MoviePage----------------------*/
+/*--Main--*/
+.topBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    color: #ddd;
+}
+
+.movieIcon{
+    border: 1px solid rgb(77, 77, 77);
+    justify-content: flex-start;
+    width: 150px;
+    margin-left: 10% ;
+    height: 150px;
+    border-radius: 5%;
+    text-align: center;
+}
+.movieName{
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 20%;
+    font-size: 24px;
+    padding-left: 0px;
+}
+.movieScore{
+    width: 10px;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-right: 20%
+}
+/*--Status--*/
+.statusBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;
+    align-items: center;
+    color: #ddd;
+}
+.movieStatus{
+    width: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 22%;
+}
+.movieStatusInput{
+    width: 10%;
+    font-size: 20px;
+    margin-left: 5%;
+}
+.movieStatInput{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    width: 100%;
+    height: 30px;
+    margin: 5px;
+    text-align: center;
+    background-color: #494949;
+    color: #ddd;
+}
+/*--Info--*/
+.infoArea{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    color: #ddd;
+}
+
+.description{
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 12px;
+    justify-content: center;
+    font-size: 16px;
+    padding-left: 0px;
+    margin-bottom: 10%;
+}
+.additionalInfo{
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 12px;
+    justify-content: center;
+    font-size: 16px;
+    padding: 50px;
+    margin-bottom: 10%;
+    font-weight: bold;
+}
+/*--Comments--*/
+.commentsArea{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;
+    justify-content: space-around;
+    align-items: center;
+    color: #ddd;
+}
+.comments{
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 12px;
+    justify-content: center;
+    margin-right: 20%;
+    margin-left: 15%;
+    font-size: 16px;
+    padding-left: 0px;
+    margin-top: 1%;
+}
+
+.movieFooter{
+    text-align:center;
+    padding:20px;
+    margin-top:280px;
+    color: #ddd;
+    background: #2c2c2c;
+}
+
+.topnavMovie { 
+    width: auto;
+    margin:3px;
+    padding-bottom: 20px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.bottomLineMovie {
+    padding-top: 20px;
+    border-bottom: 1px solid rgb(97, 97, 97);
+    width: auto;
+    text-align: center;
+    display: flexbox;
+}
+
+/*----------------------NewRecordCreation----------------------*/
+/*--Topnav--*/
+.topnavNewRecord{
+    width: auto;
+    margin:3px;
+    padding: 0px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+.backArrowNewRecord{
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: #494949;
+    height: 45px;
+    width: 50px;
+}
+.backArrowNewRecord:hover {
+    border: 1px solid rgb(0, 255, 255);
+}
+/*--RecordFrom--*/
+.newRecordForm{
+    display: flex;
+    flex-direction: column ;
+    margin: auto;
+    text-align: center;
+    width: 30%;
+    background-color: #383838;
+    height:auto;
+    color: #ddd;
+    margin-top: 5%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    border: 1px solid rgb(0, 133, 133);
+    padding: 3%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.newRecordTopTitle{
+
+    width: auto;
+    font-size: 35px;
+    padding-bottom: 2%;
+    margin: auto;
+    font-weight: bold;
+}
+.newmIcon{
+
+    width: 50%;
+    font-size: 25px;
+    padding-top: 5%;
+    margin: auto;
+}
+.newmName{
+
+    width: 50%;
+    font-size: 25px;
+    padding-top: 5%;
+    margin: auto;
+}
+.newmDescription{
+
+    width: 50%;
+    font-size: 25px;
+    padding-top: 5%;
+    margin: auto;
+}
+.newmDirector{
+
+    width: 50%;
+    font-size: 25px;
+    padding-top: 5%;
+    margin: auto;
+}
+.newmIcon input{
+    margin: auto;
+    width: auto;
+    text-align: center;
+    background-color: #ddd;
+    color: #ddd;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+
+}
+.newmName input{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    width: 65%;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    background-color: #494949;
+    color: #ddd;
+}
+.newmDescription input{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    width: 65%;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    background-color: #494949;
+    color: #ddd;
+}
+.newmDirector input{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    width: 65%;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    background-color: #494949;
+    color: #ddd;
+}
+.newmIcon input:hover { 
+    border: 1px solid rgb(0, 255, 255);
+}
+.newmName input:hover { 
+    border: 1px solid rgb(0, 255, 255);
+}
+.newmDescription input:hover { 
+    border: 1px solid rgb(0, 255, 255);
+}
+.newmDirector input:hover { 
+    border: 1px solid rgb(0, 255, 255);
+}
+.createRecordButtonSubmit{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    width: 65%;
+    height: 30px;
+    margin: 5px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #494949;
+    color: #ddd;
+}
+.createRecordButtonSubmit:hover{
+    border: 1px solid rgb(0, 255, 255);
+}
+/*--RecordFooter--*/
+.footerCreateRecord{
+    text-align:center;
+    padding:20px;
+    margin-top:190px;
+    color: #ddd;
+    background: #2c2c2c;
 }
