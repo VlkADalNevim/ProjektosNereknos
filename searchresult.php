@@ -10,10 +10,8 @@
         while ($res = mysqli_fetch_array($result)) {
         ?>
           <a class="movieHref" href="movie.php?id=<?php echo $res['id']?>">
-            <div class="movieBox">
-              <div class="movieTitle"><?php echo $res['mName']?></div>
-              <div class="spaceBetween"> </div>
-              <div class="movieRating"><?php echo $res['mRating']?></div>
+            <div class="movieHrefContent">
+              <td><?php echo $res['mName']?></td>
             </div>
           </a>
         <?php
@@ -21,10 +19,14 @@
     } else {
       ?>
         <div class='alert alert-danger mt-3 text-center' role='alert'>
-          <a class="noResult"> No result </a> 
-          <a href="movieCreation.php" class="createNewRecordA">
-            <div class="createNewRecord">Create a new record</div>
-          </a>
+          <div class="noNewResult">
+            <a class="noResult"> No results </a> 
+            <a class="createNewRecordHref" href="movieCreation.php">
+              <div class="createNewRecord">
+                <td>Create a new record</td>
+              </div>
+            </a>
+          </div>
         </div>
       <?php
       ;

@@ -1,7 +1,12 @@
 <?php 
-	include("db.php");
-?>
+  session_start(); 
 
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: index.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,10 +15,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/9526c175c2.js" crossorigin="anonymous"></script>
-		<!-- Back button javaScript -->
-		<script type="text/javascript" src="code.js"></script>
 		<!-- CSS -->
-		<link href="style.css" rel="stylesheet" type="text/css">
+		<link href="index.css" rel="stylesheet" type="text/css">
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -22,42 +25,37 @@
 	</head>
 
 	<body>
-		<!-- Logo -->
-		<div class="logoContainer">
+		<!------ Logo ------>
+		<div class="indexLogoContainer">
 			<h1>MyEntertainmentList</h1>
 		</div>
 
-		<!-- TOPNAV - Login,Dropdown -->
-		<div class="topnav">
-			<div class="dropdown">
-				<button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-				<div class="dropdown-content">
-					<a href="#">Support</a>
-					<a href="#">Info</a>
-				</div>
-			</div>
-			<a href="login.php"><button class="loginButton">Login</button></a>
+		<!------ Options ------>
+		<div class="indexTopnav">
+			<a href="profile.php"><i class="fa-solid fa-user-large"></i></a>
+			<?php if (isset($_SESSION['username'])) { ?>
+				<p><a href="index.php?logout='1'">Logout</a></p>
+			<?php } else { ?>
+				<a href="login.php">Login</a>
+			<?php } ?>
 		</div>
 
-		<!-- Search input -->
+		<!------ Search input ------>
 		<div class="searchArea">
-			<div class="topLine"></div>
-			
 	   		<input type="text" class="search" id="search" name="search" placeholder="Search for movies... ">
-
-			<div class="bottomLine"></div>
 		</div>
 
-		<!-- Results -->
-		<div class="resultsArea">
+		<!------ Results ------>
+		<div class="indexContent">
 			<div id="result">
 				<a>Search for movies...</a>
 			</div>
-		</div>
-
-		<!-- Footer -->
-		<div class="footer">© copyright MyEntertainmentList.rf.gd</div>
-
+        </div>
+		
+		<!------ Footer ------>
+		<div class="indexFooter">
+            © copyright MyEntertainmentList.rf.gd
+        </div>
 	</body>
 </html>
 

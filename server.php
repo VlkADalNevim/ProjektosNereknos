@@ -5,6 +5,8 @@ $dbservername = 'sql307.epizy.com';
 $dbusername = 'epiz_31599999';
 $dbpassword = 'FtxnQQ9xMj';
 $dbname = "epiz_31599999_mel";
+
+$errors = array(); 
 $connection = mysqli_connect($dbservername, $dbusername, $dbpassword, $dbname);
   
 // Check connection
@@ -26,7 +28,7 @@ if (isset($_POST['registerUser'])) {
   if (empty($email)) { array_push($errors, "Email is required"); }
   if (empty($password_1)) { array_push($errors, "Password is required"); }
   if ($password_1 != $password_2) {
-	array_push($errors, "The two passwords do not match");
+	  array_push($errors, "The two passwords do not match");
   }
 
   $user_check_query = "SELECT * FROM accounts WHERE username='$username' OR email='$email' LIMIT 1";
@@ -56,7 +58,7 @@ if (isset($_POST['registerUser'])) {
 }
 
 // -----------------LOGIN USER-----------------------
-if (isset($_POST['login_user'])) {
+if (isset($_POST['loginUser'])) {
   $username = mysqli_real_escape_string($connection, $_POST['username']);
   $password = mysqli_real_escape_string($connection, $_POST['password']);
 
@@ -69,7 +71,7 @@ if (isset($_POST['login_user'])) {
 
   if (count($errors) == 0) {
   	$password = md5($password);
-  	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+  	$query = "SELECT * FROM accounts WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($connection, $query);
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['username'] = $username;

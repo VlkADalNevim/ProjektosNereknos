@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    font-size: 100%;
+    background-color: #323232;
+}
+
+/*------ Logo ------*/
+.loginLogoContainer {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+/*------ Options ------*/
+.loginTopnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.loginTopnav a {
+    color: white;
+    padding: 14px;
+    margin: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid rgb(0, 255, 255);
+    border-radius: 50px;
+}
+
+.loginTopnav a:hover {
+    border: 1px solid rgb(45, 150, 150);
+}
+
+
+.space{
+    padding-top: 80px;
+}
+/*------ Form ------*/
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgb(131, 131, 131);
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin: auto;
+    width: 25%;
+    height: 250px;
+}
+
+.loginForm h1{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.loginForm div{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+}
+
+.loginForm label {
+    color: rgb(0, 255, 255);
+}
+.loginForm input{
+    margin: 5px;
+    text-align: left;
+    padding-left: 8px;
+    font-size: 14px;
+    color: white;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 25px;
+    width: 60%;
+}
+.loginForm input:hover { 
+    border: 1px solid rgb(0, 255, 255);
+}
+
+.loginButtonSubmit{
+    margin: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(218, 218, 218);
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 30px;
+    width: 25%;
+
+}
+
+.loginButtonSubmit:hover{
+    border: 1px solid rgb(0, 255, 255);
+}
+/*------ Footer ------*/
+
+.loginFooter{
+    padding: 20px;
+    margin-top: 320px;
+    text-align: center;
+    color: rgb(202, 202, 202);
+    background-color: #3f3f3f;
+    border-top: 1px solid rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+
+/* --------------------- Register --------------------- */
+
+/*------ Logo ------*/
+.registerLogoContainer {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+/*------ Options ------*/
+.registerTopnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.registerTopnav a {
+    color: white;
+    padding: 14px;
+    margin: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid rgb(0, 255, 255);
+    border-radius: 50px;
+}
+
+.registerTopnav a:hover {
+    border: 1px solid rgb(45, 150, 150);
+}
+
+
+.space{
+    padding-top: 80px;
+}
+/*------ Form ------*/
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgb(131, 131, 131);
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin: auto;
+    width: 25%;
+    height: 300px;
+}
+
+.registerForm h1{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.registerForm div{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+}
+
+.registerForm label {
+    color: rgb(0, 255, 255);
+}
+.registerForm input{
+    margin: 5px;
+    text-align: left;
+    padding-left: 8px;
+    font-size: 14px;
+    color: white;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 25px;
+    width: 60%;
+}
+.registerForm input:hover { 
+    border: 1px solid rgb(0, 255, 255);
+}
+
+.registerButtonSubmit{
+    margin: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(218, 218, 218);
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 30px;
+    width: 25%;
+
+}
+
+.registerButtonSubmit:hover{
+    border: 1px solid rgb(0, 255, 255);
+}
+/*------ Footer ------*/
+
+.registerFooter{
+    padding: 20px;
+    margin-top: 270px;
+    text-align: center;
+    color: rgb(202, 202, 202);
+    background-color: #3f3f3f;
+    border-top: 1px solid rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(224, 224, 224);
+}

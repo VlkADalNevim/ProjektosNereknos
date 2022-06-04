@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    font-size: 100%;
+    background-color: #323232;
+}
+
+/*------ Logo ------*/
+.profileLogoContainer {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+/*------ Options ------*/
+.profileTopnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+
+}
+
+.profileTopnav a {
+    color: white;
+    padding: 14px;
+    margin: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 50px;
+}
+
+.profileTopnav a:hover {
+    border: 1px solid rgb(0, 209, 224);
+}
+
+/*------ Content ------*/
+
+.profileContent{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.left{
+    flex: 33%;
+    padding: 20px;
+    text-align: center;
+}
+.main{
+    flex: 33%;
+    padding: 20px;
+    text-align: center;
+}
+.right{
+    flex: 33%;
+    padding: 20px;
+    text-align: center;
+}
+.profileContent h2{
+    font-size: 30px;
+    color: white;
+}
+
+.statusHref {
+    margin: auto;
+    color: white;
+    background-color: rgb(97, 97, 97);
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.statusHref:hover {
+    border: 1px solid rgb(0, 209, 224);
+}
+.href{
+    text-decoration: none;
+}
+/*------ Footer ------*/
+
+.profileFooter{
+    padding: 20px;
+    text-align: center;
+    color: rgb(202, 202, 202);
+    background-color: #3f3f3f;
+    border-top: 1px solid rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
