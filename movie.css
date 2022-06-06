@@ -131,6 +131,17 @@
 .movieStatInputs input:hover{
     border: 1px solid rgb(0, 209, 224);
 }
+
+.submitStatusButton{
+    margin-top: 10px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    color: white;
+}
+
+.submitStatusButton:hover{
+    border: 1px solid rgb(0, 209, 224);
+}
 .movieScore{
     display: flex;
     flex-direction: column;
@@ -227,6 +238,7 @@
         padding-right: 0px;
         padding-top: 0px;
         padding-bottom: 0px;
+        padding-left: 0px;
     }
 
     .movieTopBoxLeft{
@@ -246,13 +258,19 @@
     
     .movieIcon{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
+        text-align: center;
         align-items: center;
         margin: auto;
-        width: 30%;
+        width: 100%;
     }
 
+    .movieName{
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
     .movieStatInputs{
         padding-top: 30px;
         flex-direction: column;
@@ -279,10 +297,6 @@
     }
 
     .movieAddInfo{
-        width: 100%;
-    }
-
-    .movieIcon{
         width: 100%;
     }
     

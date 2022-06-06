@@ -4,6 +4,8 @@ session_start();
 <?php 
 include "db.php";
          
+$id=$_SESSION['id'];
+
 
 	// Movie data
 	$movie_ID = $_GET['movie_ID'];
@@ -12,20 +14,21 @@ include "db.php";
 	$moveid_ID = $row['id'];
 
 	// User rating
-	$id = $_SESSION["id"];
 	$query = "SELECT * FROM rating WHERE movie_ID=".$movie_ID." and accounts_ID=".$id;
 	$userresult = mysqli_query($connection,$query);
 	$fetchRating = mysqli_fetch_array($userresult);
 	$userRating = $fetchRating['userRating'];
+	$userStatus = $fetchRating['userStatus'];
 
 	// Average/Total rating
-	$query = "SELECT ROUND(AVG(userRating),2) as averageRating FROM rating WHERE movie_ID=".$moveid_ID;
+	$query = "SELECT ROUND(AVG(userRating),2) as averageRating FROM rating WHERE movie_ID=".$moveid_ID." and userRating>0";
 	$avgresult = mysqli_query($connection,$query);
 	$fetchAverage = mysqli_fetch_array($avgresult);
 	$averageRating = $fetchAverage['averageRating'];
 	if($averageRating <= 0){
 	$averageRating = "-||-";
 	}
+
 ?>
 
 
@@ -69,24 +72,31 @@ include "db.php";
 							<?= $row['mName'] ?>
 						</div>
 						<div class="movieStatInputs">
-						<!--
 							<div>
 								Colletion:
-									<select name="userStatus" class="movieStatInput">
-										<option>Add movie to: </option>
-										<option value="Completed">Completed</option>
-										<option value="Planned">Plan to Watch</option>
-										<option value="On-Hold">On-Hold</option>
-										<option value="Dropped">Dropped</option>
-									</select>
+								<select class="movieStatInput" name="selectMovieStatus">
+
+								<?php if (isset($_SESSION['id'])) { ?>
+									<option value="<?php echo $userStatus; ?>"> - <?php echo $userStatus; ?> - </option>
+									<option value="Completed">Completed</option>
+									<option value="Plan to Watch">Plan to Watch</option>
+									<option value="On-Hold">On-Hold</option>
+									<option value="Dropped">Dropped</option>
+								<?php } else { ?>
+									<option value=" ">---</option>
+									<option value="Completed">Completed</option>
+									<option value="Plan to Watch">Plan to Watch</option>
+									<option value="On-Hold">On-Hold</option>
+									<option value="Dropped">Dropped</option>
+								<?php } ?>
+								</select>
 							</div>
-						-->
 							<div>
 								Your Score:
 								<select class="movieStatInput" name="selectMovieRating">
 
-								<?php if (isset($_SESSION['username'])) { ?>
-									<option value="<?php echo $userRating; ?>"><?php echo $userRating; ?></option>
+								<?php if (isset($_SESSION['id'])) { ?>
+									<option value="<?php echo $userRating; ?>"> - <?php echo $userRating; ?> - </option>
 									<option value="10">10</option>
 									<option value="9">9</option>
 									<option value="8">8</option>
@@ -98,6 +108,7 @@ include "db.php";
 									<option value="2">2</option>
 									<option value="1">1</option>
 								<?php } else { ?>
+									<option>---</option>
 									<option value="10">10</option>
 									<option value="9">9</option>
 									<option value="8">8</option>
@@ -112,7 +123,7 @@ include "db.php";
 								</select>
 							</div>
 						</div>
-						<input type="submit" name="submitStatus" value="Submit">
+						<input class="submitStatusButton" type="submit" name="submitStatus" value="Submit">
 					</form>
 				</div>
 			</div>
@@ -161,6 +172,7 @@ if (isset($_POST['submitStatus'])) {
 	}
 	else{
 	$movieRating = $_POST['selectMovieRating'];
+	$movieStatus = $_POST['selectMovieStatus'];
 
 // Check entry within table
 $query = "SELECT COUNT(*) AS postCount FROM rating WHERE movie_ID=".$movie_ID." and accounts_ID=".$id;
@@ -168,11 +180,11 @@ $result = mysqli_query($connection,$query);
 $fetchdata = mysqli_fetch_array($result);
 $count = $fetchdata['postCount'];
 if($count == 0){ 
-    $insertquery = "INSERT INTO rating (movie_ID, accounts_ID, userRating) VALUES('$movie_ID', '$id', '$movieRating')";
+    $insertquery = "INSERT INTO rating (movie_ID, accounts_ID, userRating, userStatus) VALUES('$movie_ID', '$id', '$movieRating', '$movieStatus')";
     mysqli_query($connection,$insertquery);
 
    }else {
-    $updatequery = "UPDATE rating SET userRating=" . $movieRating . " where accounts_ID=" . $id . " and movie_ID=" . $movie_ID;
+    $updatequery = "UPDATE rating SET userRating='$movieRating', userStatus='$movieStatus' where accounts_ID='$id' and movie_ID='$movie_ID'";
     mysqli_query($connection,$updatequery);
    }
    // get average
