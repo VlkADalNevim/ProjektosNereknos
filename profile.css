@@ -20,7 +20,6 @@
     padding-left: 50px;
     padding-right: 50px;
     border-bottom: 1px solid rgb(224, 224, 224);
-
 }
 
 .profileTopnav a {
@@ -43,23 +42,24 @@
 .profileContent{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     padding-top: 30px;
     padding-bottom: 60px;
     padding-right: 60px;
     padding-left: 60px;
 }
 
-.left{
+.profileLeft{
     flex: 33%;
     padding: 20px;
     text-align: center;
 }
-.main{
+.profileMain{
     flex: 33%;
     padding: 20px;
     text-align: center;
 }
-.right{
+.profileRight{
     flex: 33%;
     padding: 20px;
     text-align: center;
@@ -96,3 +96,11 @@
     border-top: 1px solid rgb(224, 224, 224);
     border-bottom: 1px solid rgb(224, 224, 224);
 }
+
+@media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .profileContent{
+        flex-direction: column;
+    }
+    
+  }

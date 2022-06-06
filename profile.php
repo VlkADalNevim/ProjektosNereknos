@@ -35,14 +35,14 @@ if (!isset($_SESSION['username'])) {
 
 		<!------ Content ------>
 		<div class="profileContent">
-                    <div class="left">
+                    <div class="profileLeft">
                         <h2>Movies:</h2>
                         <a href="Plan.php" class="href"><div class="statusHref">Plan to Watch</div></a>
                         <a href="Completed.php" class="href"><div class="statusHref">Completed</div></a>
                         <a href="On-Hold.php" class="href"><div class="statusHref">On-Hold</div></a>
                         <a href="Dropped.php" class="href"><div class="statusHref">Dropped</div></a>
                     </div>
-                    <div class="main">
+                    <div class="profileMain">
                     <h2>Series:</h2>
                         <a href="Plan.php" class="href"><div class="statusHref">Plan to Watch</div></a>
                         <a href="Watching.php" class="href"><div class="statusHref">Watching</div></a>
@@ -50,7 +50,7 @@ if (!isset($_SESSION['username'])) {
                         <a href="On-Hold.php" class="href"><div class="statusHref">On-Hold</div></a>
                         <a href="Dropped.php" class="href"><div class="statusHref">Dropped</div></a>
                     </div>
-                    <div class="right">
+                    <div class="profileRight">
                     <h2>Games:</h2>
                         <a href="Plan.php" class="href"><div class="statusHref">Plan to Play</div></a>
                         <a href="Progress.php" class="href"><div class="statusHref">Playing</div></a>

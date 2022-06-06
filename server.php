@@ -52,6 +52,7 @@ if (isset($_POST['registerUser'])) {
 			  VALUES('$username', '$email', '$password')";
 	mysqli_query($connection, $query);
 	$_SESSION['username'] = $username;
+  $_SESSION['id'] = $id;
 	$_SESSION['success'] = "You are now logged in";
 	header('location: index.php');
 }
@@ -71,10 +72,21 @@ if (isset($_POST['loginUser'])) {
 
   if (count($errors) == 0) {
   	$password = md5($password);
-  	$query = "SELECT * FROM accounts WHERE username='$username' AND password='$password'";
+  	$query = "SELECT id, username, email, password FROM accounts WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($connection, $query);
   	if (mysqli_num_rows($results) == 1) {
   	  $_SESSION['username'] = $username;
+      $_SESSION['id'] = $id;
+      if ($stmt = $connection->prepare('SELECT id FROM accounts WHERE username = ?')) {
+        $stmt->bind_param('s', $_POST['username']);
+        $stmt->execute();
+        $stmt->store_result();
+          if ($stmt->num_rows > 0) {
+              $stmt->bind_result($id);
+              $stmt->fetch();
+            }
+          }
+              $_SESSION['id'] = $id;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
   	}else {
