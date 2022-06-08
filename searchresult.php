@@ -4,7 +4,7 @@
  
   if (isset($_POST['query'])) {
       $search = mysqli_real_escape_string($con, $_POST["query"]);
-      $query = "SELECT * FROM movie WHERE mname LIKE '{$_POST['query']}%' LIMIT 100";
+      $query = "SELECT * FROM movie WHERE mname LIKE '%{$_POST['query']}%' LIMIT 100";
       $result = mysqli_query($connection, $query);
     if (mysqli_num_rows($result) > 0) {
         while ($res = mysqli_fetch_array($result)) {
