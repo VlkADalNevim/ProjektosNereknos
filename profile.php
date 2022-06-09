@@ -42,7 +42,7 @@ if (!isset($_SESSION['username'])) {
                         <a href="movieOn-Hold.php" class="href"><div class="statusHref">On-Hold</div></a>
                         <a href="movieDropped.php" class="href"><div class="statusHref">Dropped</div></a>
                     </div>
-                <!--
+
                     <div class="profileMain">
                     <h2>Series:</h2>
                         <a href="seriesPlanToWatch.php" class="href"><div class="statusHref">Plan to Watch</div></a>
@@ -51,6 +51,7 @@ if (!isset($_SESSION['username'])) {
                         <a href="seriesOn-Hold.php" class="href"><div class="statusHref">On-Hold</div></a>
                         <a href="seriesDropped.php" class="href"><div class="statusHref">Dropped</div></a>
                     </div>
+
                     <div class="profileRight">
                     <h2>Games:</h2>
                         <a href="gamesPlanToPlay.php" class="href"><div class="statusHref">Plan to Play</div></a>
@@ -59,7 +60,6 @@ if (!isset($_SESSION['username'])) {
                         <a href="gamesOn-Hold.php" class="href"><div class="statusHref">On-Hold</div></a>
                         <a href="gamesDropped.php" class="href"><div class="statusHref">Dropped</div></a>
                     </div>
-                -->
         </div>
 
 		<!------ Footer ------>

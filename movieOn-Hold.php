@@ -8,7 +8,10 @@ if (!isset($_SESSION['username'])) {
 }
 
 $id=$_SESSION['id'];
-$query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.mRating, movie.id FROM rating INNER JOIN movie ON rating.movie_ID = movie.id WHERE accounts_ID=$id and userStatus='On-Hold'");
+$query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.mRating, movie.id 
+                                  FROM rating 
+                                  INNER JOIN movie ON rating.movie_ID = movie.id 
+                                  WHERE accounts_ID=$id and userStatus='On-Hold'");
 
 
 ?>
@@ -30,22 +33,22 @@ $query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.m
 	<body>
 
 		<!------ Logo ------>
-		<div class="planToWatchLogoContainer">
+		<div class="moviePagesLogoContainer">
 			<h1>MyEntertainmentList</h1>
 		</div>
 
 		<!------ Options ------>
-		<div class="planToWatchTopnav">
+		<div class="moviePagesTopnav">
 			<a href="profile.php"><i class="fa-solid fa-arrow-left"></i></a>
 		</div>
 
 		<!------ Content ------>
-		<div class="planToWatchContent">
-            <div class="planToWatchTitle">
+		<div class="moviePagesContent">
+            <div class="moviePagesTitle">
                 <a>On-Hold</a>
             </div>
 
-            <div class="planToWatchTable">
+            <div class="moviePagesTable">
                 <table>
                     <thead>
                         <tr>
@@ -67,7 +70,7 @@ $query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.m
         </div>
 
 		<!------ Footer ------>
-		<div class="planToWatchFooter">
+		<div class="moviePagesFooter">
             © copyright MyEntertainmentList.rf.gd
         </div>
 

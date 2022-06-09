@@ -8,10 +8,10 @@ if (!isset($_SESSION['username'])) {
 }
 
 $id=$_SESSION['id'];
-$query=mysqli_query($connection, "SELECT gamesRating.userGameRating, games.gName, games.gRating, games.id, gamesRating.userGameProgress 
-                                  FROM gamesRating 
-                                  INNER JOIN games ON gamesRating.games_ID = games.id 
-                                  WHERE accountsGames_ID=$id and userGameStatus='Playing'");
+$query=mysqli_query($connection, "SELECT seriesRating.userSeriesEpisodes, seriesRating.userSeriesRating, series.sName, series.sRating, series.sEpisodes, series.id 
+                                  FROM seriesRating 
+                                  INNER JOIN series ON seriesRating.series_ID = series.id 
+                                  WHERE accountsSeries_ID=$id and userSeriesStatus='Dropped'");
 
 
 ?>
@@ -24,46 +24,46 @@ $query=mysqli_query($connection, "SELECT gamesRating.userGameRating, games.gName
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/9526c175c2.js" crossorigin="anonymous"></script>
         <!-- CSS -->
-		<link href="gamesPages.css" rel="stylesheet" type="text/css">
+		<link href="seriesPages.css" rel="stylesheet" type="text/css">
 
-        <title>Games - Playing</title>
+        <title>Series - Dropped</title>
 
 	</head>
 
 	<body>
 
 		<!------ Logo ------>
-		<div class="gamesPagesLogoContainer">
+		<div class="seriesPagesLogoContainer">
 			<h1>MyEntertainmentList</h1>
 		</div>
 
 		<!------ Options ------>
-		<div class="gamesPagesTopnav">
+		<div class="seriesPagesTopnav">
 			<a href="profile.php"><i class="fa-solid fa-arrow-left"></i></a>
 		</div>
 
 		<!------ Content ------>
-		<div class="gamesPagesContent">
-            <div class="gamesPagesTitle">
-                <a>Games - Playing</a>
+		<div class="seriesPagesContent">
+            <div class="seriesPagesTitle">
+                <a>Series - Dropped</a>
             </div>
 
-            <div class="gamesPagesTable">
+            <div class="seriesPagesTable">
                 <table>
                     <thead>
                         <tr>
                             <th>Title</th>
                             <th>Total rating</th>
                             <th>Your rating</th>
-                            <th>Progress</th>
+                            <th>Episodes</th>
                         </tr>
                     </thead>
                         <?php while ($row = mysqli_fetch_array($query)) { ?>
                             <tr>
-                                <td><?php echo $row['gName']; ?></td>
-                                <td><?php echo $row['gRating']; ?></td>
-                                <td><?php echo $row['userGameRating']; ?></td>
-                                <td><?php echo $row['userGameProgress']; ?> / 100%</td>
+                                <td><?php echo $row['sName']; ?></td>
+                                <td><?php echo $row['sRating']; ?></td>
+                                <td><?php echo $row['userSeriesRating']; ?></td>
+                                <td><?php echo $row['userSeriesEpisodes']; ?> / <?php echo $row['sEpisodes']; ?></td>
                             </tr>
                         <?php } ?>
                 </table>
@@ -72,7 +72,7 @@ $query=mysqli_query($connection, "SELECT gamesRating.userGameRating, games.gName
         </div>
 
 		<!------ Footer ------>
-		<div class="gamesPagesFooter">
+		<div class="seriesPagesFooter">
             © copyright MyEntertainmentList.rf.gd
         </div>
 
