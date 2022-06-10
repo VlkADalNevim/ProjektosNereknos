@@ -31,22 +31,26 @@ include('server.php');
 
 		<!-- New Record -->
 		<div class="creationForm">
-			<h1>New game record</h1>
+			<h1>New series record</h1>
 			<form action="#" method="post">
 				<div>
-					<input class="creationIcon" type="file" name="gIcon" placeholder="Icon" value="<?php echo $row['gIcon']; ?>" >
+					<input class="creationIcon" type="file" name="sIcon" placeholder="Icon" value="<?php echo $row['sIcon']; ?>" >
+				</div>
+
+                <div>
+					<input type="number" name="sEpisodes" placeholder="Number of episodes" value="<?php echo $row['sEpisodes']; ?>">
 				</div>
 
 				<div>
-					<input type="text" name="gName" placeholder="Title" value="<?php echo $row['gName']; ?>" required>
+					<input type="text" name="sName" placeholder="Title" value="<?php echo $row['sName']; ?>" required>
 				</div>
 
                 <div>
-					<input type="text" name="gDescription" placeholder="Description" value="<?php echo $row['gDescription']; ?>">
+					<input type="text" name="sDescription" placeholder="Description" value="<?php echo $row['sDescription']; ?>">
 				</div>
 
                 <div>
-					<input type="text" name="gAuthor" placeholder="Author" value="<?php echo $row['gAuthor']; ?>">
+					<input type="text" name="sDirector" placeholder="Director" value="<?php echo $row['sDirector']; ?>">
 				</div>
 				
 				<button type="submit" class="creationButtonSubmit" name="createRecord">Create</button>
@@ -61,13 +65,14 @@ include('server.php');
 <?php
 if(isset($_POST['createRecord']))
 {	 
-	$gIcon = $_POST['gIcon'];
-	$gName = $_POST['gName'];
-    $gDescription = $_POST['gDescription'];
-	$gAuthor = $_POST['gAuthor'];
+	$sIcon = $_POST['sIcon'];
+	$sName = $_POST['sName'];
+    $sEpisodes = $_POST['sEpisodes'];
+    $sDescription = $_POST['sDescription'];
+	$sDirector = $_POST['sDirector'];
 
-	$sql = "INSERT INTO games (gIcon,gName,gDescription,gAuthor)
-	VALUES ('$gIcon','$gName','$gDescription','$gAuthor')";
+	$sql = "INSERT INTO series (sIcon,sName,sDescription,sDirector)
+	VALUES ('$sIcon','$sName','$sDescription','$sDirector')";
 	if (mysqli_query($connection, $sql)) {
 		echo "New record created!";
 	} else {

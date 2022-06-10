@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    font-size: 100%;
+    background-color: #323232;
+}
+
+.backgroundImage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('images/logoBackground.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*------ Logo ------*/
+.creationLogoContainer {
+    background: transparent;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+.creationLogoContainer h1 {
+    background: transparent;
+    text-shadow: 3px 3px #000000;
+}
+
+/*------ Options ------*/
+.creationTopnav {
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.creationTopnav a {
+    color: white;
+    padding: 14px;
+    margin: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    background: transparent;
+}
+
+.creationTopnav a:hover {
+    border: 1px solid rgb(0, 195, 255);
+}
+
+
+.space{
+    padding-top: 80px;
+}
+/*------ Form ------*/
+
+.creationForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgb(131, 131, 131);
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin: auto;
+    width: 40%;
+    height: 400px;
+}
+
+.creationForm h1{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bolder;
+    color: white;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.creationForm div{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+}
+
+.creationForm label {
+    color: rgb(0, 255, 255);
+}
+.creationIcon{
+    margin: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 25px !important;
+    width: 30% !important;
+}
+.creationForm input{
+    margin: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 35px;
+    width: 60%;
+}
+.creationForm input:hover { 
+    border: 1px solid rgb(0, 255, 255);
+}
+
+.creationButtonSubmit{
+    margin: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(218, 218, 218);
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 30px;
+    width: 25%;
+
+}
+
+.creationButtonSubmit:hover{
+    border: 1px solid rgb(0, 255, 255);
+}
+/*------ Footer ------*/
+
+.creationFooter{
+    padding: 20px;
+    margin-top: 320px;
+    text-align: center;
+    color: rgb(202, 202, 202);
+    background-color: #3f3f3f;
+    border-top: 1px solid rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(224, 224, 224);
+}

@@ -30,6 +30,7 @@ include('server.php');
 			</div>
 			<div class="space"><span style="opacity:0;">.</span></div>
 		</div>
+
 		<!------ Login ------>
 		<div class="loginForm">
 			<h1>Login</h1>
@@ -49,7 +50,6 @@ include('server.php');
 			</form>
 		</div>
 			 
-		</div>
 		<!-- Footer -->
 		<div class="loginFooter">© copyright MyEntertainmentList.rf.gd</div>
 

@@ -5,56 +5,56 @@ include('server.php');
 <html>
 	<head>
 		<meta charset="utf-8">
+		<!-- Responsive Design -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Login</title>
+		<!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/9526c175c2.js" crossorigin="anonymous"></script>
-		<link href="style.css" rel="stylesheet" type="text/css">
+		<!-- CSS -->
+		<link href="dataCreation.css" rel="stylesheet" type="text/css">
+
+		<title>Movie creation</title>
 	</head>
 
 	<body>
-		<!-- Logo -->
-		<div class="logoContainer">
-			<h1>MyEntertainmentList</h1>
-		</div>
-
-		<!-- TOPNAV - backArrow, registerButton -->
-		<div class="topnavNewRecord">
-			<div>
-				<a href="index.php"><button class="backArrowNewRecord"><i class="fa-solid fa-arrow-left"></i></button></a>
+		<div class="backgroundImage">
+			<!------- Logo ------>
+			<div class="creationLogoContainer">
+				<h1>MyEntertainmentList</h1>
 			</div>
-		</div>
 
-		<div class="bottomLine"></div>
+			<!------ Options ------>
+			<div class="creationTopnav">
+				<a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+			</div>
+			<div class="space"><span style="opacity:0;">.</span></div>
+		</div>
 
 		<!-- New Record -->
-		<div class="newRecordForm">
-            <a class="newRecordTopTitle">New record creation</a>
-            <div class="bottomLine"></div>
+		<div class="creationForm">
+			<h1>New movie record</h1>
 			<form action="#" method="post">
-				<div class="newmIcon">
-					<input type="file" name="mIcon" id="icon" placeholder="Icon" value="<?php echo $row['mIcon']; ?>" >
+				<div>
+					<input class="creationIcon" type="file" name="mIcon" placeholder="Icon" value="<?php echo $row['mIcon']; ?>" >
 				</div>
 
-				<div class="newmName">
-					<input type="text" name="mName" id="name" placeholder="Title" value="<?php echo $row['mName']; ?>" required>
+				<div>
+					<input type="text" name="mName" placeholder="Title" value="<?php echo $row['mName']; ?>" required>
 				</div>
 
-                <div class="newmDescription">
-					<input type="text" name="mDescription" id="description" placeholder="Description" value="<?php echo $row['mDescription']; ?>">
+                <div>
+					<input type="text" name="mDescription" placeholder="Description" value="<?php echo $row['mDescription']; ?>">
 				</div>
 
-                <div class="newmDirector">
-					<input type="text" name="mDirector" id="director" placeholder="Director" value="<?php echo $row['mDirector']; ?>">
+                <div>
+					<input type="text" name="mDirector" placeholder="Director" value="<?php echo $row['mDirector']; ?>">
 				</div>
-
-                <input type="submit" name="createRecord" value="Create" class="createRecordButtonSubmit"></td>
+				
+				<button type="submit" class="creationButtonSubmit" name="createRecord">Create</button>
 			</form>
 		</div>
 			 
-		</div>
 		<!-- Footer -->
-		<div class="footerCreateRecord">© copyright MyEntertainmentList.rf.gd</div>
-
+		<div class="creationFooter">© copyright MyEntertainmentList.rf.gd</div>
 	</body>
 </html>
 
