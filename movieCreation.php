@@ -30,7 +30,7 @@ include('server.php');
 		</div>
 
 		<!-- New Record -->
-		<div class="creationForm">
+		<div class="creationFormMovie">
 			<h1>New movie record</h1>
 			<form action="#" method="post">
 				<div>
@@ -49,7 +49,7 @@ include('server.php');
 					<input type="text" name="mDirector" placeholder="Director" value="<?php echo $row['mDirector']; ?>">
 				</div>
 				
-				<button type="submit" class="creationButtonSubmit" name="createRecord">Create</button>
+				<button type="submit" class="creationMovieButtonSubmit" name="createRecord">Create</button>
 			</form>
 		</div>
 			 

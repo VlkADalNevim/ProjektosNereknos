@@ -61,7 +61,7 @@
 }
 /*------ Form ------*/
 
-.creationForm{
+.creationFormSeries{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,25 +74,22 @@
     height: 400px;
 }
 
-.creationForm h1{
+.creationFormSeries h1{
     text-align: center;
     font-size: 35px;
     font-weight: bolder;
     color: white;
     padding-bottom: 5px;
-    border-bottom: 1px solid rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(0, 196, 0);
 }
 
-.creationForm div{
+.creationFormSeries div{
     text-align: center;
     font-size: 25px;
     font-weight: bolder;
     color: white;
 }
 
-.creationForm label {
-    color: rgb(0, 255, 255);
-}
 .creationIcon{
     margin: 5px;
     text-align: center;
@@ -103,7 +100,7 @@
     height: 25px !important;
     width: 30% !important;
 }
-.creationForm input{
+.creationFormSeries input{
     margin: 5px;
     text-align: center;
     font-size: 14px;
@@ -113,11 +110,10 @@
     height: 35px;
     width: 60%;
 }
-.creationForm input:hover { 
-    border: 1px solid rgb(0, 255, 255);
+.creationFormSeries input:hover { 
+    border: 1px solid rgb(0, 196, 0);
 }
-
-.creationButtonSubmit{
+.creationSeriesButtonSubmit{
     margin: 5px;
     text-align: center;
     font-size: 18px;
@@ -129,8 +125,136 @@
 
 }
 
-.creationButtonSubmit:hover{
-    border: 1px solid rgb(0, 255, 255);
+.creationSeriesButtonSubmit:hover{
+    border: 1px solid rgb(0, 196, 0);
+}
+
+
+
+.creationFormMovie{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgb(131, 131, 131);
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin: auto;
+    width: 40%;
+    height: 400px;
+}
+
+.creationFormMovie h1{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bolder;
+    color: white;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(0, 196, 196);
+}
+
+.creationFormMovie div{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+}
+
+.creationFormMovie label {
+    color: rgb(0, 255, 255);
+}
+
+.creationFormMovie input{
+    margin: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 35px;
+    width: 60%;
+}
+.creationFormMovie input:hover { 
+    border: 1px solid rgb(0, 196, 196);
+}
+.creationMovieButtonSubmit{
+    margin: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(218, 218, 218);
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 30px;
+    width: 25%;
+
+}
+
+.creationMovieButtonSubmit:hover{
+    border: 1px solid rgb(0, 196, 196);
+}
+
+
+
+.creationFormGames{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgb(131, 131, 131);
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    margin: auto;
+    width: 40%;
+    height: 400px;
+}
+
+.creationFormGames h1{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bolder;
+    color: white;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(196, 0, 0);
+}
+
+.creationFormGames div{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+}
+
+.creationFormGames label {
+    color: rgb(0, 255, 255);
+}
+
+.creationFormGames input{
+    margin: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 35px;
+    width: 60%;
+}
+.creationFormGames input:hover { 
+    border: 1px solid rgb(196, 0, 0);
+}
+.creationGamesButtonSubmit{
+    margin: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(218, 218, 218);
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    height: 30px;
+    width: 25%;
+
+}
+
+.creationGamesButtonSubmit:hover{
+    border: 1px solid rgb(196, 0, 0);
 }
 /*------ Footer ------*/
 

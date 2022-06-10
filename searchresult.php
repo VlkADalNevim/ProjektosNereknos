@@ -3,8 +3,8 @@
   require_once "db.php";
  
   if (isset($_POST['query'])) {
-      $search = mysqli_real_escape_string($con, $_POST["query"]);
-      $query = "SELECT * FROM movie WHERE mname LIKE '%{$_POST['query']}%' LIMIT 100";
+      $search = mysqli_real_escape_string($connection, $_POST["query"]);
+      $query = "SELECT * FROM movie WHERE mname LIKE '%{$_POST['query']}%' LIMIT 20";
       $result = mysqli_query($connection, $query);
     if (mysqli_num_rows($result) > 0) {
         while ($res = mysqli_fetch_array($result)) {
@@ -22,8 +22,8 @@
           <div class="noNewResult">
             <a class="noResult"> No results </a> 
             <a class="createNewRecordHref" href="movieCreation.php">
-              <div class="createNewRecord">
-                <td>Create a new record</td>
+              <div class="createNewMovieRecord">
+                <td>Create new movie record</td>
               </div>
             </a>
           </div>

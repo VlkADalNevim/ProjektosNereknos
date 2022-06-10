@@ -30,15 +30,11 @@ include('server.php');
 		</div>
 
 		<!-- New Record -->
-		<div class="creationForm">
+		<div class="creationFormSeries">
 			<h1>New series record</h1>
 			<form action="#" method="post">
 				<div>
 					<input class="creationIcon" type="file" name="sIcon" placeholder="Icon" value="<?php echo $row['sIcon']; ?>" >
-				</div>
-
-                <div>
-					<input type="number" name="sEpisodes" placeholder="Number of episodes" value="<?php echo $row['sEpisodes']; ?>">
 				</div>
 
 				<div>
@@ -52,8 +48,12 @@ include('server.php');
                 <div>
 					<input type="text" name="sDirector" placeholder="Director" value="<?php echo $row['sDirector']; ?>">
 				</div>
+
+				<div>
+					<input type="number" name="sEpisodes" placeholder="Number of episodes" value="<?php echo $row['sEpisodes']; ?>">
+				</div>
 				
-				<button type="submit" class="creationButtonSubmit" name="createRecord">Create</button>
+				<button type="submit" class="creationSeriesButtonSubmit" name="createRecord">Create</button>
 			</form>
 		</div>
 			 

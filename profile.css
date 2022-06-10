@@ -79,12 +79,23 @@
     padding: 20px;
     text-align: center;
 }
-.profileContent h2{
+.profileLeft h2{
     font-size: 30px;
     color: white;
+    border-bottom: 1px solid rgb(0, 255, 255, 0.5);
+}
+.profileMain h2{
+    font-size: 30px;
+    color: white;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.5);
+}
+.profileRight h2{
+    font-size: 30px;
+    color: white;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.5);
 }
 
-.statusHref {
+.statusHrefMovies {
     margin: auto;
     color: white;
     background-color: rgb(97, 97, 97);
@@ -95,8 +106,38 @@
     font-size: 20px;
     font-weight: bold;
 }
-.statusHref:hover {
-    border: 1px solid rgb(0, 209, 224);
+.statusHrefMovies:hover {
+    border: 1px solid rgb(0, 255, 255);
+}
+
+.statusHrefSeries {
+    margin: auto;
+    color: white;
+    background-color: rgb(97, 97, 97);
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.statusHrefSeries:hover {
+    border: 1px solid rgb(0, 255, 0);
+}
+
+.statusHrefGames {
+    margin: auto;
+    color: white;
+    background-color: rgb(97, 97, 97);
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.statusHrefGames:hover {
+    border: 1px solid rgb(255, 0, 0);
 }
 .href{
     text-decoration: none;
