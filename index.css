@@ -4,23 +4,38 @@
     background-color: #323232;
 }
 
+.backgroundImage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('images/logoBackground.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 /*------ Logo ------*/
 .indexLogoContainer {
+    background: transparent;
     padding: 20px;
     text-align: center;
     color: white;
-    font-size: 40px;
+    font-size: 50px;
+}
+
+.indexLogoContainer h1 {
+    background: transparent;
+    text-shadow: 3px 3px #000000;
 }
 
 /*------ Options ------*/
 .indexTopnav {
+    background: transparent;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-left: 50px;
     padding-right: 50px;
     border-bottom: 1px solid rgb(224, 224, 224);
-
 }
 
 .indexTopnav a {
@@ -30,15 +45,72 @@
     text-decoration: none;
     text-align: center;
     font-size: 30px;
-    border: 1px solid rgb(0, 255, 255);
+    border: 1px solid rgb(224, 224, 224);
     border-radius: 50px;
+    background: transparent;
 }
 
 .indexTopnav a:hover {
-    border: 1px solid rgb(45, 150, 150);
+    border: 1px solid rgb(0, 195, 255);
 }
 
 /*------ Search ------*/
+
+.searchInputsButtons{
+    display: flex;
+    flex-direction: column;
+}
+
+.searchAreaConfig{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
+    margin-bottom: -20px;
+}
+
+.showMoviesButton{
+    margin: 20px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid rgb(0, 255, 255);
+    width: 5%;
+    text-align: center;
+    color: #ddd;
+    cursor: pointer;
+}
+.showMoviesButton:hover {
+    border: 1px solid rgb(0, 196, 196);
+}
+
+.showGamesButton{
+    margin: 20px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid rgb(255, 0, 0);
+    width: 5%;
+    text-align: center;
+    color: #ddd;
+    cursor: pointer;
+}
+.showGamesButton:hover {
+    border: 1px solid rgb(196, 0, 0);
+}
+
+.showSeriesButton{
+    margin: 20px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid rgb(0, 255, 0);
+    width: 5%;
+    text-align: center;
+    color: #ddd;
+    cursor: pointer;
+}
+.showSeriesButton:hover {
+    border: 1px solid rgb(0, 196, 0);
+}
+
 .searchArea {
     display: flex;
     flex-direction: row;
@@ -48,7 +120,7 @@
     border-bottom: 1px solid rgb(224, 224, 224);
 }
 
-.search {
+#searchMovies {
     margin: 20px;
     height: 50px;
     border-radius: 50px;
@@ -58,8 +130,36 @@
     color: #ddd;
 }
 
-.search:hover {
+#searchMovies:hover {
     border: 1px solid rgb(0, 196, 196);
+}
+
+#searchGames {
+    margin: 20px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid rgb(255, 0, 0);
+    width: 40%;
+    text-align: center;
+    color: #ddd;
+}
+
+#searchGames:hover {
+    border: 1px solid rgb(196, 0, 0);
+}
+
+#searchSeries {
+    margin: 20px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid rgb(0, 255, 0);
+    width: 40%;
+    text-align: center;
+    color: #ddd;
+}
+
+#searchSeries:hover {
+    border: 1px solid rgb(0, 196, 0);
 }
 /*------ Content ------*/
 
@@ -81,17 +181,43 @@
     flex-direction: row;
     justify-content: center;
     border-radius: 50px;
-    border: 1px solid rgb(126, 126, 126);
+    border: 1px solid rgb(107, 175, 175);
     padding: 20px;
     font-weight: bold;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
 }
 
 .movieHrefContent:hover{
-    border: 1px solid rgb(107, 175, 175);
+    border: 1px solid rgb(49, 88, 88);
 }
 
+.gameHrefContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 50px;
+    border: 1px solid rgb(172, 0, 0);
+    padding: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+}
+.gameHrefContent:hover{
+    border: 1px solid rgb(94, 0, 0);
+}
 
+.seriesHrefContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 50px;
+    border: 1px solid rgb(0, 172, 43);
+    padding: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+}
+.seriesHrefContent:hover{
+    border: 1px solid rgb(0, 99, 25);
+}
 
 .noNewResult{
     display: flex;
@@ -111,16 +237,37 @@
     color: #ddd;
     margin: 20px;
 }
-.createNewRecord{
+.createNewMovieRecord{
     border-radius: 50px;
-    border: 1px solid rgb(94, 170, 170);
+    border: 1px solid rgb(0, 170, 170);
     padding: 20px;
     font-weight: bold;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
 }
+.createNewMovieRecord:hover{
+    border: 1px solid rgb(0, 126, 126);
+}
 
-.createNewRecord:hover{
-    border: 1px solid rgb(126, 126, 126);
+.createNewGameRecord{
+    border-radius: 50px;
+    border: 1px solid rgb(170, 0, 0);
+    padding: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+}
+.createNewGameRecord:hover{
+    border: 1px solid rgb(126, 0,0 );
+}
+
+.createNewSeriesRecord{
+    border-radius: 50px;
+    border: 1px solid rgb(0, 170, 0);
+    padding: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+}
+.createNewSeriesRecord:hover{
+    border: 1px solid rgb(0, 126, 0);
 }
 /*------ Footer ------*/
 
@@ -138,5 +285,24 @@
     /* For mobile phones: */
     .indexLogoContainer {
       width: auto;
+    }
+    #searchMovies {
+        width: 100%;
+    }
+    #searchGames {
+        width: 100%;
+    }
+    #searchSeries {
+        width: 100%;
+    }
+
+    .showMoviesButton{
+        width: 15%;
+    }
+    .showGamesButton{
+        width: 15%;
+    }
+    .showSeriesButton{
+        width: 15%;
     }
   }

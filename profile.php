@@ -21,18 +21,18 @@ if (!isset($_SESSION['username'])) {
 	</head>
 
 	<body>
+        <div class="backgroundImage">
+            <!------ Logo ------>
+            <div class="profileLogoContainer">
+                <h1>MyEntertainmentList</h1>
+            </div>
 
-		<!------ Logo ------>
-		<div class="profileLogoContainer">
-			<h1>MyEntertainmentList</h1>
-		</div>
-
-		<!------ Options ------>
-		<div class="profileTopnav">
-			<a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
-			<a href="myAccount.php"><i class="fa-solid fa-gear"></i></a>
-		</div>
-
+            <!------ Options ------>
+            <div class="profileTopnav">
+                <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+                <a href="myAccount.php"><i class="fa-solid fa-gear"></i></a>
+            </div>
+        </div>
 		<!------ Content ------>
 		<div class="profileContent">
                     <div class="profileLeft">

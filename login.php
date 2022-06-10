@@ -16,19 +16,20 @@ include('server.php');
 	</head>
 
 	<body>
-		<!------- Logo ------>
-		<div class="loginLogoContainer">
-			<h1>MyEntertainmentList</h1>
+		<div class="backgroundImage">
+			<!------- Logo ------>
+			<div class="loginLogoContainer">
+				<h1>MyEntertainmentList</h1>
+			</div>
+
+
+			<!------ Options ------>
+			<div class="loginTopnav">
+				<a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+				<a href="register.php">Register</a>
+			</div>
+			<div class="space"><span style="opacity:0;">.</span></div>
 		</div>
-
-
-		<!------ Options ------>
-		<div class="loginTopnav">
-			<a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
-			<a href="register.php">Register</a>
-		</div>
-
-		<div class="space"><span style="opacity:0;">.</span></div>
 		<!------ Login ------>
 		<div class="loginForm">
 			<h1>Login</h1>

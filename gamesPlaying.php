@@ -31,16 +31,17 @@ $query=mysqli_query($connection, "SELECT gamesRating.userGameRating, games.gName
 	</head>
 
 	<body>
+        <div class="backgroundImage">
+            <!------ Logo ------>
+            <div class="gamesPagesLogoContainer">
+                <h1>MyEntertainmentList</h1>
+            </div>
 
-		<!------ Logo ------>
-		<div class="gamesPagesLogoContainer">
-			<h1>MyEntertainmentList</h1>
-		</div>
-
-		<!------ Options ------>
-		<div class="gamesPagesTopnav">
-			<a href="profile.php"><i class="fa-solid fa-arrow-left"></i></a>
-		</div>
+            <!------ Options ------>
+            <div class="gamesPagesTopnav">
+                <a href="profile.php"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+        </div>
 
 		<!------ Content ------>
 		<div class="gamesPagesContent">

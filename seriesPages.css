@@ -3,17 +3,32 @@
     font-size: 100%;
     background-color: #323232;
 }
+.backgroundImage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('images/logoBackground.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 /*------ Logo ------*/
 .seriesPagesLogoContainer {
+    background: transparent;
     padding: 20px;
     text-align: center;
     color: white;
-    font-size: 40px;
+    font-size: 50px;
+}
+.seriesPagesLogoContainer h1 {
+    background: transparent;
+    text-shadow: 3px 3px #000000;
 }
 
 /*------ Options ------*/
 .seriesPagesTopnav {
+    background: transparent;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -29,12 +44,13 @@
     text-decoration: none;
     text-align: center;
     font-size: 30px;
-    border: 1px solid rgb(201, 201, 201);
+    border: 1px solid rgb(224, 224, 224);
     border-radius: 50px;
+    background: transparent;
 }
 
 .seriesPagesTopnav a:hover {
-    border: 1px solid rgb(0, 209, 224);
+    border: 1px solid rgb(0, 195, 255);
 }
 
 /*------ Content ------*/

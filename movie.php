@@ -49,16 +49,17 @@ $id=$_SESSION['id'];
 	</head>
 
 	<body>
-		<!------ Logo ------>
-		<div class="movieLogoContainer">
-			<h1>MyEntertainmentList</h1>
-		</div>
+		<div class="backgroundImage">
+			<!------ Logo ------>
+			<div class="movieLogoContainer">
+				<h1>MyEntertainmentList</h1>
+			</div>
 
-		<!------ Options ------>
-		<div class="movieTopnav">
-			<a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+			<!------ Options ------>
+			<div class="movieTopnav">
+				<a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+			</div>
 		</div>
-
 		<!------ topBox ------>
 		<div class="movieTopBox">
 			<div class="movieTopBoxLeft">

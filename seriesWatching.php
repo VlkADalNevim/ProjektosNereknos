@@ -31,17 +31,18 @@ $query=mysqli_query($connection, "SELECT seriesRating.userSeriesEpisodes, series
 	</head>
 
 	<body>
+        <div class="backgroundImage">
+            <!------ Logo ------>
+            <div class="seriesPagesLogoContainer">
+                <h1>MyEntertainmentList</h1>
+            </div>
 
-		<!------ Logo ------>
-		<div class="seriesPagesLogoContainer">
-			<h1>MyEntertainmentList</h1>
-		</div>
-
-		<!------ Options ------>
-		<div class="seriesPagesTopnav">
-			<a href="profile.php"><i class="fa-solid fa-arrow-left"></i></a>
-		</div>
-
+            <!------ Options ------>
+            <div class="seriesPagesTopnav">
+                <a href="profile.php"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+        </div>
+        
 		<!------ Content ------>
 		<div class="seriesPagesContent">
             <div class="seriesPagesTitle">
