@@ -75,7 +75,7 @@ body {
     font-size: 40px;
     font-weight: bold;
     color: white;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgb(0, 255, 255, 0.5);
     padding-top: 50px;
 }
 
@@ -105,7 +105,15 @@ body {
     background-color: #4b4b4b;
     padding: 20px;
     color: #ddd;
+}
 
+.moviePagesTable a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 20px;
+}
+.moviePagesTable a:hover {
+    color: rgb(0, 255, 255, 0.5);
 }
 /*------ Footer ------*/
 

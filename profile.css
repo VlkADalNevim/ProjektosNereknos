@@ -4,7 +4,7 @@
 
 }
 body {
-    background-color: #323232ec;
+    background-color: #444444;
 }
 
 .backgroundImage{
@@ -28,6 +28,7 @@ body {
     background: transparent;
     text-shadow: 3px 3px #000000;
 }
+
 /*------ Options ------*/
 .profileTopnav {
     background: transparent;
@@ -61,7 +62,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding-top: 30px;
+    padding-top: 0px;
     padding-bottom: 60px;
     padding-right: 60px;
     padding-left: 60px;

@@ -46,7 +46,7 @@ $query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.m
 		<!------ Content ------>
 		<div class="moviePagesContent">
             <div class="moviePagesTitle">
-                <a>Dropped</a>
+                <a>Movies - Dropped</a>
             </div>
 
             <div class="moviePagesTable">
@@ -60,7 +60,7 @@ $query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.m
                     </thead>
                         <?php while ($row = mysqli_fetch_array($query)) { ?>
                             <tr>
-                                <td><?php echo $row['mName']; ?></td>
+                                <td><a href="movie.php?movie_ID=<?php echo $row['id']; ?>"><?php echo $row['mName']; ?></a></td>
                                 <td><?php echo $row['mRating']; ?></td>
                                 <td><?php echo $row['userRating']; ?></td>
                             </tr>

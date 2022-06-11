@@ -33,11 +33,12 @@
 
 				<!------ Options ------>
 				<div class="indexTopnav">
-					<a href="profile.php">Profile</a>
-					<?php if (isset($_SESSION['username'])) { ?>
+				<?php if (isset($_SESSION['username'])) { ?>
+						<a style="text-transform: capitalize;" href="profile.php"><?php echo $_SESSION['username']?></i></a>
 						<p><a href="index.php?logout='1'">Logout</a></p>
 					<?php } else { ?>
-						<a href="login.php">Login</a>
+						<a href="profile.php"><i class="fa-solid fa-user"></i></a>
+						<a href="login.php"><i class="fa-solid fa-right-to-bracket"></i></a>
 					<?php } ?>
 				</div>
 		</div>

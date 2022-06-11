@@ -33,6 +33,7 @@ if (!isset($_SESSION['username'])) {
                 <a href="myAccount.php"><i class="fa-solid fa-gear"></i></a>
             </div>
         </div>
+
 		<!------ Content ------>
 		<div class="profileContent">
                     <div class="profileLeft">

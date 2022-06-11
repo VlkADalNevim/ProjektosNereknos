@@ -61,7 +61,7 @@ $query=mysqli_query($connection, "SELECT seriesRating.userSeriesEpisodes, series
                     </thead>
                         <?php while ($row = mysqli_fetch_array($query)) { ?>
                             <tr>
-                                <td><?php echo $row['sName']; ?></td>
+                                <td><a href="series.php?series_ID=<?php echo $row['id']; ?>"><?php echo $row['sName']; ?></a></td>
                                 <td><?php echo $row['sRating']; ?></td>
                                 <td><?php echo $row['userSeriesRating']; ?></td>
                                 <td><?php echo $row['userSeriesEpisodes']; ?> / <?php echo $row['sEpisodes']; ?></td>

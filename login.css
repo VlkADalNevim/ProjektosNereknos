@@ -108,6 +108,11 @@
     border: 1px solid rgb(0, 255, 255);
 }
 
+.loginForm a {
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(163, 163, 163);
+}
 .loginButtonSubmit{
     margin: 5px;
     text-align: center;
@@ -193,7 +198,7 @@
     border-radius: 20px;
     margin: auto;
     width: 25%;
-    height: 300px;
+    height: 330px;
 }
 
 .registerForm h1{
@@ -244,6 +249,12 @@
 
 .registerButtonSubmit:hover{
     border: 1px solid rgb(0, 255, 255);
+}
+
+.registerForm a {
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(163, 163, 163);
 }
 /*------ Footer ------*/
 

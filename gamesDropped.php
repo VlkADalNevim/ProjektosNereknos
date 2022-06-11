@@ -61,7 +61,7 @@ $query=mysqli_query($connection, "SELECT gamesRating.userGameRating, games.gName
                     </thead>
                         <?php while ($row = mysqli_fetch_array($query)) { ?>
                             <tr>
-                                <td><?php echo $row['gName']; ?></td>
+                                <td><a href="games.php?games_ID=<?php echo $row['id']; ?>"><?php echo $row['gName']; ?></a></td>
                                 <td><?php echo $row['gRating']; ?></td>
                                 <td><?php echo $row['userGameRating']; ?></td>
                                 <td><?php echo $row['userGameProgress']; ?> / 100%</td>

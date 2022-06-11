@@ -26,7 +26,7 @@ $query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.m
         <!-- CSS -->
 		<link href="moviePages.css" rel="stylesheet" type="text/css">
 
-        <title>Movies - Plan to Watch</title>
+        <title>Movies - On-Hold</title>
 
 	</head>
 
@@ -46,7 +46,7 @@ $query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.m
 		<!------ Content ------>
 		<div class="moviePagesContent">
             <div class="moviePagesTitle">
-                <a>On-Hold</a>
+                <a>Movies - On-Hold</a>
             </div>
 
             <div class="moviePagesTable">
@@ -60,7 +60,7 @@ $query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.m
                     </thead>
                         <?php while ($row = mysqli_fetch_array($query)) { ?>
                             <tr>
-                                <td><?php echo $row['mName']; ?></td>
+                                <td><a href="movie.php?movie_ID=<?php echo $row['id']; ?>"><?php echo $row['mName']; ?></a></td>
                                 <td><?php echo $row['mRating']; ?></td>
                                 <td><?php echo $row['userRating']; ?></td>
                             </tr>

@@ -75,7 +75,7 @@ body {
     font-size: 40px;
     font-weight: bold;
     color: white;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.5);
     padding-top: 50px;
 }
 
@@ -106,6 +106,14 @@ body {
     padding: 20px;
     color: #ddd;
 
+}
+.gamesPagesTable a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 20px;
+}
+.gamesPagesTable a:hover {
+    color: rgba(255, 0, 0, 0.5);
 }
 /*------ Footer ------*/
 

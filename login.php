@@ -26,7 +26,6 @@ include('server.php');
 			<!------ Options ------>
 			<div class="loginTopnav">
 				<a href="index.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
-				<a href="register.php">Register</a>
 			</div>
 			<div class="space"><span style="opacity:0;">.</span></div>
 		</div>
@@ -47,6 +46,9 @@ include('server.php');
 				</div>
 
 				<button type="submit" class="loginButtonSubmit" name="loginUser">Login</button>
+				<div>
+					<a href="register.php">Not yet a member?</a>
+				</div>
 			</form>
 		</div>
 			 
