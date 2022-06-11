@@ -57,7 +57,7 @@ $id=$_SESSION['id'];
 
 			<!------ Options ------>
 			<div class="movieTopnav">
-				<a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+				<a href="index.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
 			</div>
 		</div>
 		<!------ topBox ------>
@@ -73,7 +73,7 @@ $id=$_SESSION['id'];
 							<?= $row['mName'] ?>
 						</div>
 						<div class="movieStatInputs">
-							<div>
+							<div class="movieInputs">
 								Colletion:
 								<select class="movieStatInput" name="selectMovieStatus">
 
@@ -92,7 +92,7 @@ $id=$_SESSION['id'];
 								<?php } ?>
 								</select>
 							</div>
-							<div>
+							<div class="movieInputs">
 								Your Score:
 								<select class="movieStatInput" name="selectMovieRating">
 
@@ -195,6 +195,8 @@ if($count == 0){
    $averageRating = $fetchAverage['averageRating'];
    $return_arr = array("averageRating"=>$averageRating);
    echo json_encode($return_arr);
+   	$updateaveragequery = "UPDATE movie SET mRating='$averageRating' where id='$movie_ID'";
+    mysqli_query($connection,$updateaveragequery);
 
    header("Refresh:0");
 	}

@@ -25,7 +25,7 @@ include('server.php');
 
 			<!------ Options ------>
 			<div class="loginTopnav">
-				<a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+				<a href="index.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
 				<a href="register.php">Register</a>
 			</div>
 			<div class="space"><span style="opacity:0;">.</span></div>

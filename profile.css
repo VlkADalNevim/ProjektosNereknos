@@ -1,7 +1,10 @@
 * {
     box-sizing: border-box;
     font-size: 100%;
-    background-color: #323232;
+
+}
+body {
+    background-color: #323232ec;
 }
 
 .backgroundImage{
@@ -95,11 +98,24 @@
     border-bottom: 1px solid rgba(255, 0, 0, 0.5);
 }
 
+.profileLeft a{
+    text-decoration: none;
+    padding: 7px;
+}
+.profileMain a{
+    text-decoration: none;
+    padding: 7px;
+}
+.profileRight a{
+    text-decoration: none;
+    padding: 7px;
+}
+
 .statusHrefMovies {
     margin: auto;
     color: white;
     background-color: rgb(97, 97, 97);
-    border: 1px solid #aaa;
+    border: 1px solid rgba(170, 170, 170, 0);
     border-radius: 10px;
     width: 60%;
     padding: 20px;
@@ -107,14 +123,14 @@
     font-weight: bold;
 }
 .statusHrefMovies:hover {
-    border: 1px solid rgb(0, 255, 255);
+    border: 1px solid rgba(0, 255, 255, 0.5);
 }
 
 .statusHrefSeries {
     margin: auto;
     color: white;
     background-color: rgb(97, 97, 97);
-    border: 1px solid #aaa;
+    border: 1px solid rgba(170, 170, 170, 0);
     border-radius: 10px;
     width: 60%;
     padding: 20px;
@@ -122,14 +138,14 @@
     font-weight: bold;
 }
 .statusHrefSeries:hover {
-    border: 1px solid rgb(0, 255, 0);
+    border: 1px solid rgb(0, 255, 0, 0.5);
 }
 
 .statusHrefGames {
     margin: auto;
     color: white;
     background-color: rgb(97, 97, 97);
-    border: 1px solid #aaa;
+    border: 1px solid rgba(170, 170, 170, 0);
     border-radius: 10px;
     width: 60%;
     padding: 20px;
@@ -137,11 +153,7 @@
     font-weight: bold;
 }
 .statusHrefGames:hover {
-    border: 1px solid rgb(255, 0, 0);
-}
-.href{
-    text-decoration: none;
-    width: 60%;
+    border: 1px solid rgb(255, 0, 0, 0.5);
 }
 /*------ Footer ------*/
 
@@ -149,7 +161,7 @@
     padding: 20px;
     text-align: center;
     color: rgb(202, 202, 202);
-    background-color: #3f3f3f;
+    background-color: #3f3f3fee;
     border-top: 1px solid rgb(224, 224, 224);
     border-bottom: 1px solid rgb(224, 224, 224);
 }

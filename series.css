@@ -15,20 +15,20 @@
 }
 
 /*------ Logo ------*/
-.movieLogoContainer {
+.seriesLogoContainer {
     background: transparent;
     padding: 20px;
     text-align: center;
     color: white;
     font-size: 50px;
 }
-.movieLogoContainer h1 {
+.seriesLogoContainer h1 {
     background: transparent;
     text-shadow: 3px 3px #000000;
 }
 
 /*------ Options ------*/
-.movieTopnav {
+.seriesTopnav {
     background: transparent;
     display: flex;
     flex-direction: row;
@@ -38,7 +38,7 @@
     border-bottom: 1px solid rgb(224, 224, 224);
 }
 
-.movieTopnav a {
+.seriesTopnav a {
     color: white;
     padding: 14px;
     margin: 10px;
@@ -50,13 +50,13 @@
     background: transparent;
 }
 
-.movieTopnav a:hover {
+.seriesTopnav a:hover {
     border: 1px solid rgb(0, 195, 255);
 }
 
 /*------ topBox ------*/
 
-.movieTopBox{
+.seriesTopBox{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -67,7 +67,7 @@
     border-bottom: 1px solid rgb(156, 156, 156);
 }
 
-.movieTopBoxLeft{
+.seriesTopBoxLeft{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -75,14 +75,14 @@
     border-right: 1px solid rgb(156, 156, 156);
 }
 
-.movieTopBoxRight{
+.seriesTopBoxRight{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     width: 50%;
 }
 
-.movieIcon{
+.seriesIcon{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -91,7 +91,7 @@
     width: 30%;
 }
 
-.movieIconImage{
+.seriesIconImage{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -104,23 +104,23 @@
     width: 150px;
     color: rgb(129, 129, 129);
 }
-.movieIconImage:hover{
+.seriesIconImage:hover{
     border: 1px solid rgb(0, 209, 224);
 }
-.movieName{
+.seriesName{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 70%;
 }
 
-.movieNameText{
+.seriesNameText{
     font-size: 25px;
     font-weight: bold;
     width: 100%;
     color: white;
 }
-.movieStatInputs{
+.seriesStatInputs{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -128,24 +128,35 @@
     color: rgb(172, 172, 172);
 }
 
-.movieInputs{
+.seriesInputs{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 30%;
 }
 
-.movieStatInput{
+.seriesStatInput{
     border: 1px solid rgb(224, 224, 224);
     border-radius: 50px;
     width: 100%;
     height: 30px;
     color: rgb(185, 185, 185);
 }
-.movieStatInput:hover{
+.seriesStatInput:hover{
     border: 1px solid rgb(0, 209, 224);
 }
 
+.seriesStatInputProgress{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    width: 100%;
+    height: 30px;
+    color: rgb(185, 185, 185);
+    text-align: center;
+}
+.seriesStatInputProgress:hover{
+    border: 1px solid rgb(0, 209, 224);
+}
 
 /*Submit button*/
 .submitStatusButton{
@@ -160,9 +171,9 @@
 }
 
 
-/*movie average score*/
+/*series average score*/
 
-.movieScore{
+.seriesScore{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -170,18 +181,18 @@
     color: white;
     margin: auto;
 }
-.movieScore a{
+.seriesScore a{
     font-size: 40px;
 }
 /*------ Info Area ------*/
 
-.movieInfoBox{
+.seriesInfoBox{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.movieDescription{
+.seriesDescription{
     border-right: 1px solid rgb(92, 92, 92);
     display: flex;
     flex-direction: column;
@@ -191,7 +202,7 @@
     padding-left: 100px;
     color: #ddd;
 }
-.movieAddInfo{
+.seriesAddInfo{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -206,7 +217,7 @@
     font-weight: bolder;
 }
 
-.movieAddInfo a{
+.seriesAddInfo a{
     font-size: 18px;
     font-weight: normal;
     color: rgb(190, 190, 190);
@@ -214,7 +225,7 @@
 
 /*------ Footer ------*/
 
-.movieCommentsBox{
+.seriesCommentsBox{
     border-top: 1px solid rgb(156, 156, 156);
     display: flex;
     flex-direction: column;
@@ -224,7 +235,7 @@
     padding-top: 70px;
 }
 
-.movieComment{
+.seriesComment{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -238,7 +249,7 @@
 
 /*------ Footer ------*/
 
-.movieFooter{
+.seriesFooter{
     padding: 20px;
     text-align: center;
     color: rgb(202, 202, 202);
@@ -251,7 +262,7 @@
 /*------ Mobile ------*/
 @media only screen and (max-width: 1280px) {
     /* For mobile phones: */
-    .movieStatInputs{
+    .seriesStatInputs{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -259,20 +270,20 @@
         color: rgb(172, 172, 172);
     }
     
-    .movieInputs{
+    .seriesInputs{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         width: 80%;
     }
-    .movieIcon{
+    .seriesIcon{
 
         width: 100%;
     }
     }
 @media only screen and (max-width: 780px) {
     /* For mobile phones: */
-    .movieTopBox{
+    .seriesTopBox{
         align-items: center;
         text-align: center;
         flex-direction: column;
@@ -282,14 +293,14 @@
         padding-left: 0px;
     }
 
-    .movieTopBoxLeft{
+    .seriesTopBoxLeft{
         flex-direction: column;
         border-right: 0px solid rgb(156, 156, 156);
         padding-bottom: 20px;
         padding-top: 20px;
     }
 
-    .movieTopBoxRight{
+    .seriesTopBoxRight{
         flex-direction: row;
         justify-content: flex-start;
         width: 100%;
@@ -297,7 +308,7 @@
         padding-top: 20px;
     }
     
-    .movieIcon{
+    .seriesIcon{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -307,12 +318,12 @@
         width: 100%;
     }
 
-    .movieName{
+    .seriesName{
         flex-direction: column;
         justify-content: center;
         width: 100%;
     }
-    .movieStatInputs{
+    .seriesStatInputs{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -321,29 +332,29 @@
         color: rgb(172, 172, 172);
     }
     
-    .movieInputs{
+    .seriesInputs{
         flex-direction: column;
-        width: 70%;
+        width: 90%;
     }
 
-    .movieNameText{
+    .seriesNameText{
         padding-top: 30px;
     }
 
-    .movieInfoBox{
+    .seriesInfoBox{
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    .movieDescription{
+    .seriesDescription{
         border-right: 0px solid rgb(92, 92, 92);
         flex-direction: row;
         justify-content: flex-start;
         width: 100%;
     }
 
-    .movieAddInfo{
+    .seriesAddInfo{
         width: 100%;
     }
     

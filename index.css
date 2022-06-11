@@ -1,7 +1,10 @@
 * {
     box-sizing: border-box;
     font-size: 100%;
-    background-color: #323232;
+
+}
+body {
+    background-color: #323232e1;
 }
 
 .backgroundImage{
@@ -59,6 +62,7 @@
 .searchInputsButtons{
     display: flex;
     flex-direction: column;
+    background-color: #32323241;
 }
 
 .searchAreaConfig{
@@ -78,9 +82,10 @@
     text-align: center;
     color: #ddd;
     cursor: pointer;
+    background-color: #3232325e;
 }
 .showMoviesButton:hover {
-    border: 1px solid rgb(0, 196, 196);
+    border: 1px solid rgb(0, 170, 170);
 }
 
 .showGamesButton{
@@ -92,9 +97,10 @@
     text-align: center;
     color: #ddd;
     cursor: pointer;
+    background-color: #3232325e;
 }
 .showGamesButton:hover {
-    border: 1px solid rgb(196, 0, 0);
+    border: 1px solid rgb(170, 0, 0);
 }
 
 .showSeriesButton{
@@ -106,9 +112,10 @@
     text-align: center;
     color: #ddd;
     cursor: pointer;
+    background-color: #3232325e;
 }
 .showSeriesButton:hover {
-    border: 1px solid rgb(0, 196, 0);
+    border: 1px solid rgb(0, 170, 0);
 }
 
 .searchArea {
@@ -128,6 +135,7 @@
     width: 40%;
     text-align: center;
     color: #ddd;
+    background-color: #32323275;
 }
 
 #searchMovies:hover {
@@ -142,6 +150,7 @@
     width: 40%;
     text-align: center;
     color: #ddd;
+    background-color: #32323275;
 }
 
 #searchGames:hover {
@@ -156,6 +165,7 @@
     width: 40%;
     text-align: center;
     color: #ddd;
+    background-color: #32323275;
 }
 
 #searchSeries:hover {
@@ -239,35 +249,35 @@
 }
 .createNewMovieRecord{
     border-radius: 50px;
-    border: 1px solid rgb(0, 170, 170);
+    border: 1px solid rgb(0, 88, 88);
     padding: 20px;
     font-weight: bold;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
 }
 .createNewMovieRecord:hover{
-    border: 1px solid rgb(0, 126, 126);
+    border: 1px solid rgb(0, 60, 60);
 }
 
 .createNewGameRecord{
     border-radius: 50px;
-    border: 1px solid rgb(170, 0, 0);
+    border: 1px solid rgb(80, 0, 0);
     padding: 20px;
     font-weight: bold;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
 }
 .createNewGameRecord:hover{
-    border: 1px solid rgb(126, 0,0 );
+    border: 1px solid rgb(44, 0, 0);
 }
 
 .createNewSeriesRecord{
     border-radius: 50px;
-    border: 1px solid rgb(0, 170, 0);
+    border: 1px solid rgb(0, 88, 0);
     padding: 20px;
     font-weight: bold;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
 }
 .createNewSeriesRecord:hover{
-    border: 1px solid rgb(0, 126, 0);
+    border: 1px solid rgb(0, 60, 0);
 }
 /*------ Footer ------*/
 
@@ -276,12 +286,38 @@
     margin-top: 600px;
     text-align: center;
     color: rgb(202, 202, 202);
-    background-color: #3f3f3f;
+    background-color: #32323241;
     border-top: 1px solid rgb(224, 224, 224);
     border-bottom: 1px solid rgb(224, 224, 224);
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 1000px) {
+    /* For mobile phones: */
+    .indexLogoContainer {
+      width: auto;
+    }
+    #searchMovies {
+        width: 70%;
+    }
+    #searchGames {
+        width: 70%;
+    }
+    #searchSeries {
+        width: 70%;
+    }
+
+    .showMoviesButton{
+        width: 10%;
+    }
+    .showGamesButton{
+        width: 10%;
+    }
+    .showSeriesButton{
+        width: 10%;
+    }
+  }
+
+@media only screen and (max-width: 700px) {
     /* For mobile phones: */
     .indexLogoContainer {
       width: auto;

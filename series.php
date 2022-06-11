@@ -7,22 +7,23 @@ include "db.php";
 $id=$_SESSION['id'];
 
 
-	// Game data
-	$games_ID = $_GET['games_ID'];
-	$query=mysqli_query($connection,"SELECT * FROM games where id=$games_ID");
+	// Series data
+	$series_ID = $_GET['series_ID'];
+	$query=mysqli_query($connection,"SELECT * FROM series where id=$series_ID");
 	$row=mysqli_fetch_array($query);
-	$gamees_ID = $row['id'];
+	$seriees_ID = $row['id'];
+    $seriesEpisodes = $row['sEpisodes'];
 
 	// User rating
-	$query = "SELECT * FROM gamesRating WHERE games_ID=".$games_ID." and accountsGames_ID=".$id;
+	$query = "SELECT * FROM seriesRating WHERE series_ID=".$series_ID." and accountsSeries_ID=".$id;
 	$userresult = mysqli_query($connection,$query);
 	$fetchRating = mysqli_fetch_array($userresult);
-	$userGameRating = $fetchRating['userGameRating'];
-	$userGameStatus = $fetchRating['userGameStatus'];
-    $userGameProgress = $fetchRating['userGameProgress'];
+	$userSeriesRating = $fetchRating['userSeriesRating'];
+	$userSeriesStatus = $fetchRating['userSeriesStatus'];
+    $userSeriesEpisodes = $fetchRating['userSeriesEpisodes'];
 
 	// Average/Total rating
-	$query = "SELECT ROUND(AVG(userGameRating),2) as averageRating FROM gamesRating WHERE games_ID=".$gamees_ID." and userGameRating>0";
+	$query = "SELECT ROUND(AVG(userSeriesRating),2) as averageRating FROM seriesRating WHERE series_ID=".$seriees_ID." and userSeriesRating>0";
 	$avgresult = mysqli_query($connection,$query);
 	$fetchAverage = mysqli_fetch_array($avgresult);
 	$averageRating = $fetchAverage['averageRating'];
@@ -42,7 +43,7 @@ $id=$_SESSION['id'];
 		<!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/9526c175c2.js" crossorigin="anonymous"></script>
 		<!-- CSS -->
-		<link href="game.css" rel="stylesheet" type="text/css">
+		<link href="series.css" rel="stylesheet" type="text/css">
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -52,56 +53,56 @@ $id=$_SESSION['id'];
 	<body>
 		<div class="backgroundImage">
 			<!------ Logo ------>
-			<div class="gameLogoContainer">
+			<div class="seriesLogoContainer">
 				<h1>MyEntertainmentList</h1>
 			</div>
 
 			<!------ Options ------>
-			<div class="gameTopnav">
+			<div class="seriesTopnav">
 				<a href="index.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
 			</div>
 		</div>
 		<!------ topBox ------>
-		<div class="gameTopBox">
-			<div class="gameTopBoxLeft">
-				<div class="gameIcon">
-					<a class="gameIconImage">*Image* <?= $row['gIcon'] ?></a> 
+		<div class="seriesTopBox">
+			<div class="seriesTopBoxLeft">
+				<div class="seriesIcon">
+					<a class="seriesIconImage">*Image* <?= $row['sIcon'] ?></a> 
 				</div>
 
-				<div class="gameName">
+				<div class="seriesName">
 					<form action="#" method="POST">
-						<div class="gameNameText">
-							<?= $row['gName'] ?>
+						<div class="seriesNameText">
+							<?= $row['sName'] ?>
 						</div>
-						<div class="gameStatInputs">
-							<div class="gameInputs">
+						<div class="seriesStatInputs">
+							<div class="seriesInputs">
 								Colletion:
-								<select class="gameStatInput" name="selectGameStatus">
+								<select class="seriesStatInput" name="selectSeriesStatus">
 
 								<?php if (isset($_SESSION['id'])) { ?>
-									<option value="<?php echo $userGameStatus; ?>"> - <?php echo $userGameStatus; ?> - </option>
-									<option value="Finished">Finished</option>
-                                    <option value="Playing">Playing</option>
-                                    <option value="Plan to Play">Plan to Play</option>
+									<option value="<?php echo $userSeriesStatus; ?>"> - <?php echo $userSeriesStatus; ?> - </option>
+									<option value="Completed">Completed</option>
+                                    <option value="Watching">Watching</option>
+                                    <option value="Plan to Watch">Plan to Watch</option>
 									<option value="On-Hold">On-Hold</option>
 									<option value="Dropped">Dropped</option>
 								<?php } else { ?>
 									<option value=" ">---</option>
-									<option value="Finished">Finished</option>
-                                    <option value="Playing">Playing</option>
-                                    <option value="Plan to Play">Plan to Play</option>
+									<option value="Completed">Completed</option>
+                                    <option value="Watching">Watching</option>
+                                    <option value="Plan to Watch">Plan to Watch</option>
 									<option value="On-Hold">On-Hold</option>
 									<option value="Dropped">Dropped</option>
 								<?php } ?>
 								</select>
 							</div>
 
-							<div class="gameInputs">
+							<div class="seriesInputs">
 								Your Score:
-								<select class="gameStatInput" name="selectGameRating">
+								<select class="seriesStatInput" name="selectSeriesRating">
 
 								<?php if (isset($_SESSION['id'])) { ?>
-									<option value="<?php echo $userGameRating; ?>"> - <?php echo $userGameRating; ?> - </option>
+									<option value="<?php echo $userSeriesRating; ?>"> - <?php echo $userSeriesRating; ?> - </option>
 									<option value="10">10</option>
 									<option value="9">9</option>
 									<option value="8">8</option>
@@ -128,9 +129,9 @@ $id=$_SESSION['id'];
 								</select>
 							</div>
 
-                            <div class="gameInputs">
+                            <div class="seriesInputs">
 								    Progress:
-                                    <input type="number" class="gameStatInput" name="selectGameProgress" min="0" max="100" placeholder="<?php echo $userGameProgress; ?> / 100%">
+                                    <input type="number" class="seriesStatInputProgress" name="selectSeriesProgress" min="0" max="<?php echo $seriesEpisodes; ?>" placeholder="<?php echo $userSeriesEpisodes; ?> / <?php echo $seriesEpisodes; ?>">
 							</div>
 
 						</div>
@@ -138,9 +139,9 @@ $id=$_SESSION['id'];
 					</form>
 				</div>
 			</div>
-			<div class="gameTopBoxRight">
+			<div class="seriesTopBoxRight">
 
-				<div class="gameScore">
+				<div class="seriesScore">
 					SCORE
 					<a><?php echo $averageRating; ?></a>
 				</div>
@@ -148,28 +149,28 @@ $id=$_SESSION['id'];
 		</div>
 
 		<!------ Info area ------>
-		<div class="gameInfoBox">
-            <div class="gameDescription">
-                <p> <?= $row['gDescription'] ?></p>
+		<div class="seriesInfoBox">
+            <div class="seriesDescription">
+                <p> <?= $row['sDescription'] ?></p>
 			</div>
 
-            <div class="gameAddInfo">
-                <p>Author: <a><?= $row['gAuthor'] ?></a></p>
-				<p>---: <a><?= $row['---'] ?></a></p>
-				<p>---: <a><?= $row['---'] ?></a></p>
-				<p>---: <a><?= $row['---'] ?></a></p>
+            <div class="seriesAddInfo">
+                <p>Director: <a><?= $row['sDirector'] ?></a></p>
+				<p>Release date: <a><?= $row['sReleaseDate'] ?></a></p>
+				<p>Episodes: <a><?php echo $seriesEpisodes; ?></a></p>
+				<p>Score: <a><?php echo $averageRating; ?></a></p>
 			</div>
 		</div>
 
 		<!------ Comments ------>
-		<div class="gameCommentsBox">
-			<div class="gameComment">
+		<div class="seriesCommentsBox">
+			<div class="seriesComment">
             	<p>Comments</p>
 			</div>
 		</div>
 
 		<!------ Footer ------>
-		<div class="gameFooter">© copyright MyEntertainmentList.rf.gd</div>
+		<div class="seriesFooter">© copyright MyEntertainmentList.rf.gd</div>
 
 	</body>
 	
@@ -182,32 +183,32 @@ if (isset($_POST['submitStatus'])) {
 		header('location: login.php');
 	}
 	else{
-	$gamesRating = $_POST['selectGameRating'];
-	$gamesStatus = $_POST['selectGameStatus'];
-    $gamesProgress = $_POST['selectGameProgress'];
+	$seriesRating = $_POST['selectSeriesRating'];
+	$seriesStatus = $_POST['selectSeriesStatus'];
+    $seriesProgress = $_POST['selectSeriesProgress'];
 
 // Check entry within table
-$query = "SELECT COUNT(*) AS postCount FROM gamesRating WHERE games_ID=".$games_ID." and accountsGames_ID=".$id;
+$query = "SELECT COUNT(*) AS postCount FROM seriesRating WHERE series_ID=".$series_ID." and accountsSeries_ID=".$id;
 $result = mysqli_query($connection,$query);
 $fetchdata = mysqli_fetch_array($result);
 $count = $fetchdata['postCount'];
 if($count == 0){ 
-    $insertquery = "INSERT INTO gamesRating (games_ID, accountsGames_ID, userGameRating, userGameStatus, userGameProgress) 
-                    VALUES('$games_ID', '$id', '$gamesRating', '$gamesStatus', '$gamesProgress')";
+    $insertquery = "INSERT INTO seriesRating (series_ID, accountsSeries_ID, userSeriesRating, userSeriesStatus, userSeriesEpisodes) 
+                    VALUES('$series_ID', '$id', '$seriesRating', '$seriesStatus', '$seriesProgress')";
     mysqli_query($connection,$insertquery);
 
    }else {
-    $updatequery = "UPDATE gamesRating SET userGameRating='$gamesRating', userGameStatus='$gamesStatus', userGameProgress='$gamesProgress' where accountsGames_ID='$id' and games_ID='$games_ID'";
+    $updatequery = "UPDATE seriesRating SET userSeriesRating='$seriesRating', userSeriesStatus='$seriesStatus', userSeriesEpisodes='$seriesProgress' where accountsSeries_ID='$id' and series_ID='$series_ID'";
     mysqli_query($connection,$updatequery);
    }
    // get average
-   $query = "SELECT ROUND(AVG(userGameRating),2) as averageRating FROM gamesRating WHERE games_ID=".$games_ID;
+   $query = "SELECT ROUND(AVG(userSeriesRating),2) as averageRating FROM seriesRating WHERE series_ID=".$series_ID;
    $result = mysqli_query($connection,$query);
    $fetchAverage = mysqli_fetch_array($result);
    $averageRating = $fetchAverage['averageRating'];
    $return_arr = array("averageRating"=>$averageRating);
    echo json_encode($return_arr);
-    $updateaveragequery = "UPDATE games SET gRating='$averageRating' where id='$games_ID'";
+    $updateaveragequery = "UPDATE series SET sRating='$averageRating' where id='$series_ID'";
     mysqli_query($connection,$updateaveragequery);
 
    header("Refresh:0");

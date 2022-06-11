@@ -9,7 +9,7 @@
     if (mysqli_num_rows($result) > 0) {
         while ($res = mysqli_fetch_array($result)) {
         ?>
-          <a class="movieHref" href="movie.php?movie_ID=<?php echo $res['id']?>">
+          <a class="movieHref" href="series.php?series_ID=<?php echo $res['id']?>">
             <div class="seriesHrefContent">
               <td><?php echo $res['sName']?></td>
             </div>

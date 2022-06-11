@@ -15,20 +15,20 @@
 }
 
 /*------ Logo ------*/
-.movieLogoContainer {
+.gameLogoContainer {
     background: transparent;
     padding: 20px;
     text-align: center;
     color: white;
     font-size: 50px;
 }
-.movieLogoContainer h1 {
+.gameLogoContainer h1 {
     background: transparent;
     text-shadow: 3px 3px #000000;
 }
 
 /*------ Options ------*/
-.movieTopnav {
+.gameTopnav {
     background: transparent;
     display: flex;
     flex-direction: row;
@@ -38,7 +38,7 @@
     border-bottom: 1px solid rgb(224, 224, 224);
 }
 
-.movieTopnav a {
+.gameTopnav a {
     color: white;
     padding: 14px;
     margin: 10px;
@@ -50,13 +50,13 @@
     background: transparent;
 }
 
-.movieTopnav a:hover {
+.gameTopnav a:hover {
     border: 1px solid rgb(0, 195, 255);
 }
 
 /*------ topBox ------*/
 
-.movieTopBox{
+.gameTopBox{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -67,7 +67,7 @@
     border-bottom: 1px solid rgb(156, 156, 156);
 }
 
-.movieTopBoxLeft{
+.gameTopBoxLeft{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -75,14 +75,14 @@
     border-right: 1px solid rgb(156, 156, 156);
 }
 
-.movieTopBoxRight{
+.gameTopBoxRight{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     width: 50%;
 }
 
-.movieIcon{
+.gameIcon{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -91,7 +91,7 @@
     width: 30%;
 }
 
-.movieIconImage{
+.gameIconImage{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -104,23 +104,23 @@
     width: 150px;
     color: rgb(129, 129, 129);
 }
-.movieIconImage:hover{
+.gameIconImage:hover{
     border: 1px solid rgb(0, 209, 224);
 }
-.movieName{
+.gameName{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 70%;
 }
 
-.movieNameText{
+.gameNameText{
     font-size: 25px;
     font-weight: bold;
     width: 100%;
     color: white;
 }
-.movieStatInputs{
+.gameStatInputs{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -128,21 +128,21 @@
     color: rgb(172, 172, 172);
 }
 
-.movieInputs{
+.gameInputs{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 30%;
 }
 
-.movieStatInput{
+.gameStatInput{
     border: 1px solid rgb(224, 224, 224);
     border-radius: 50px;
     width: 100%;
     height: 30px;
     color: rgb(185, 185, 185);
 }
-.movieStatInput:hover{
+.gameStatInput:hover{
     border: 1px solid rgb(0, 209, 224);
 }
 
@@ -160,9 +160,9 @@
 }
 
 
-/*movie average score*/
+/*Game average score*/
 
-.movieScore{
+.gameScore{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -170,18 +170,18 @@
     color: white;
     margin: auto;
 }
-.movieScore a{
+.gameScore a{
     font-size: 40px;
 }
 /*------ Info Area ------*/
 
-.movieInfoBox{
+.gameInfoBox{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.movieDescription{
+.gameDescription{
     border-right: 1px solid rgb(92, 92, 92);
     display: flex;
     flex-direction: column;
@@ -191,7 +191,7 @@
     padding-left: 100px;
     color: #ddd;
 }
-.movieAddInfo{
+.gameAddInfo{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -206,7 +206,7 @@
     font-weight: bolder;
 }
 
-.movieAddInfo a{
+.gameAddInfo a{
     font-size: 18px;
     font-weight: normal;
     color: rgb(190, 190, 190);
@@ -214,7 +214,7 @@
 
 /*------ Footer ------*/
 
-.movieCommentsBox{
+.gameCommentsBox{
     border-top: 1px solid rgb(156, 156, 156);
     display: flex;
     flex-direction: column;
@@ -224,7 +224,7 @@
     padding-top: 70px;
 }
 
-.movieComment{
+.gameComment{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -238,7 +238,7 @@
 
 /*------ Footer ------*/
 
-.movieFooter{
+.gameFooter{
     padding: 20px;
     text-align: center;
     color: rgb(202, 202, 202);
@@ -251,7 +251,7 @@
 /*------ Mobile ------*/
 @media only screen and (max-width: 1280px) {
     /* For mobile phones: */
-    .movieStatInputs{
+    .gameStatInputs{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -259,20 +259,20 @@
         color: rgb(172, 172, 172);
     }
     
-    .movieInputs{
+    .gameInputs{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         width: 80%;
     }
-    .movieIcon{
+    .gameIcon{
 
         width: 100%;
     }
     }
 @media only screen and (max-width: 780px) {
     /* For mobile phones: */
-    .movieTopBox{
+    .gameTopBox{
         align-items: center;
         text-align: center;
         flex-direction: column;
@@ -282,14 +282,14 @@
         padding-left: 0px;
     }
 
-    .movieTopBoxLeft{
+    .gameTopBoxLeft{
         flex-direction: column;
         border-right: 0px solid rgb(156, 156, 156);
         padding-bottom: 20px;
         padding-top: 20px;
     }
 
-    .movieTopBoxRight{
+    .gameTopBoxRight{
         flex-direction: row;
         justify-content: flex-start;
         width: 100%;
@@ -297,7 +297,7 @@
         padding-top: 20px;
     }
     
-    .movieIcon{
+    .gameIcon{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -307,12 +307,12 @@
         width: 100%;
     }
 
-    .movieName{
+    .gameName{
         flex-direction: column;
         justify-content: center;
         width: 100%;
     }
-    .movieStatInputs{
+    .gameStatInputs{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -321,29 +321,29 @@
         color: rgb(172, 172, 172);
     }
     
-    .movieInputs{
+    .gameInputs{
         flex-direction: column;
-        width: 70%;
+        width: 90%;
     }
 
-    .movieNameText{
+    .gameNameText{
         padding-top: 30px;
     }
 
-    .movieInfoBox{
+    .gameInfoBox{
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    .movieDescription{
+    .gameDescription{
         border-right: 0px solid rgb(92, 92, 92);
         flex-direction: row;
         justify-content: flex-start;
         width: 100%;
     }
 
-    .movieAddInfo{
+    .gameAddInfo{
         width: 100%;
     }
     
