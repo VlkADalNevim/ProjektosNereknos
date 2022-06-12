@@ -6,6 +6,8 @@
   	unset($_SESSION['username']);
   	header("location: index.php");
   }
+
+  $id=$_SESSION['id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,6 +37,9 @@
 				<div class="indexTopnav">
 				<?php if (isset($_SESSION['username'])) { ?>
 						<a style="text-transform: capitalize;" href="profile.php"><?php echo $_SESSION['username']?></i></a>
+							<?php if ($id == 1) {	?>
+								<a href="admin.php">ADMINISTRACE</a>
+							<?php } ?>
 						<p><a href="index.php?logout='1'">Logout</a></p>
 					<?php } else { ?>
 						<a href="profile.php"><i class="fa-solid fa-user"></i></a>

@@ -54,6 +54,11 @@ include "db.php";
     $resuldrop = mysqli_query($connection, $dropseries);
     $dropseriesdata = mysqli_fetch_assoc($resuldrop);
 
+    // Episodes
+    $seriesepisodes = "SELECT SUM(userSeriesEpisodes) AS total FROM seriesRating where accountsSeries_ID = $id";
+    $seriesepisodesresult = mysqli_query($connection, $seriesepisodes);
+    $episodesseriesdata = mysqli_fetch_assoc($seriesepisodesresult);
+
 
     // Games Stats
     $plangames = "SELECT COUNT(*) AS total FROM gamesRating where accountsGames_ID = $id and userGameStatus='Plan to Play'";
@@ -114,10 +119,12 @@ include "db.php";
                     <div>
                         <h2 style="text-transform: uppercase;"><?php echo $row['username']; ?></h2>
                     </div>
+                    <!--
                     <div>
                         <a>Friends</a>
                         <a>IDK</a>
                     </div>
+                    -->
                 </div>
             </div>
             <div class="profileContent">
@@ -137,6 +144,7 @@ include "db.php";
                         <a>Completed - <?php echo $complseriesdata['total']; ?></a>
                         <a>On-Hold - <?php echo $holdseriesdata['total']; ?></a>
                         <a>Dropped - <?php echo $dropseriesdata['total']; ?></a>
+                        <a class="space">Episodes - <?php echo $episodesseriesdata['total']; ?></a>
                     </div>
                     <div class="statsEntertainmentGames">
                         <h2>Games:</h2>

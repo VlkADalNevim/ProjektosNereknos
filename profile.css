@@ -123,6 +123,10 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.space{
+    padding-top: 10px;
+    border-top: 1px solid rgba(143, 143, 143, 0.219);
+}
 .statsEntertainmentMovies{
     display: flex;
     flex-direction: column;
@@ -273,13 +277,76 @@ body {
     border-bottom: 1px solid rgb(224, 224, 224);
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 1050px) {
+    /* For mobile phones: */
+    .profileContent{
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .profileContentStats{
+        width: 70%;
+        margin: auto;
+    }
+    .profileContentData{
+        width: 70%;
+        margin: auto;
+    }
+
+    .statusHrefGames{
+        width: 100%;
+    }
+    .statusHrefSeries{
+        width: 100%;
+    }
+    .statusHrefMovies{
+        width: 100%;
+    }
+    .profileContentData{
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 815px) {
     /* For mobile phones: */
     .profileContentData{
         flex-direction: column;
     }
     .profileLogoContainer h1 {
-        font-size: 32px;
+        font-size: 40px;
     }
-    
+    .profileAccount{
+        padding-left: 100px;
+    }
   }
+
+  @media only screen and (max-width: 715px) {
+    /* For mobile phones: */
+    .profileAccountImage{
+        height: 150px;
+        width: 150px;
+    }
+    .profileAccountName h2{
+        padding-left: 50px;
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* For mobile phones: */
+    .profileLogoContainer h1 {
+        font-size: 30px;
+    }
+    .profileAccount{
+        padding-left: 0px;
+    }
+    .profileAccountImage{
+        height: 120px;
+        width: 120px;
+    }
+    .profileContentData{
+        padding-left: 0px;
+        padding-right: 0px;
+
+    }
+}

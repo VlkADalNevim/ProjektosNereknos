@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    font-size: 100%;
+
+}
+body {
+    background-color: #323232e1;
+}
+
+.backgroundImage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('images/logoBackground.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*------ Logo ------*/
+.adminLogoContainer {
+    background: transparent;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    width: 100%;
+}
+
+.adminLogoContainer h1 {
+    background: transparent;
+    text-shadow: 3px 3px #000000;
+}
+
+/*------ Options ------*/
+.adminTopnav {
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.adminTopnav a {
+    color: white;
+    padding: 14px;
+    margin: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 50px;
+    background: transparent;
+}
+
+.adminTopnav a:hover {
+    border: 1px solid rgb(0, 195, 255);
+}
+/*------ Content ------*/
+
+.adminBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.accounts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.createAndSearch{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.createNew{
+    border: 1px solid red;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.searchAndResult{
+    border: 1px solid blue;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*------ Footer ------*/
+
+.adminFooter{
+    padding: 20px;
+    margin-top: 600px;
+    text-align: center;
+    color: rgb(202, 202, 202);
+    background-color: #32323241;
+    border-top: 1px solid rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
