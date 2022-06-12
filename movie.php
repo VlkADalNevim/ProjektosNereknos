@@ -64,7 +64,9 @@ $id=$_SESSION['id'];
 		<div class="movieTopBox">
 			<div class="movieTopBoxLeft">
 				<div class="movieIcon">
-					<a class="movieIconImage">*Image* <?= $row['mIcon'] ?></a> 
+					<a class="movieIconImage">
+						<img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['mIcon']); ?>" />
+					</a>
 				</div>
 
 				<div class="movieName">
@@ -145,9 +147,9 @@ $id=$_SESSION['id'];
 
             <div class="movieAddInfo">
                 <p>Director: <a><?= $row['mDirector'] ?></a></p>
-				<p>Camera: <a><?= $row['camera'] ?></a></p>
-				<p>Music: <a><?= $row['music'] ?></a></p>
-				<p>Actors: <a><?= $row['actors'] ?></a></p>
+				<p>Release date: <a><?= $row['mReleaseDate'] ?></a></p>
+				<p>---: <a><?= $row['---'] ?></a></p>
+				<p>---: <a><?= $row['---'] ?></a></p>
 			</div>
 		</div>
 
@@ -198,7 +200,11 @@ if($count == 0){
    	$updateaveragequery = "UPDATE movie SET mRating='$averageRating' where id='$movie_ID'";
     mysqli_query($connection,$updateaveragequery);
 
-   header("Refresh:0");
+	?>
+	<script type="text/javascript">
+		window.location = "movie.php?movie_ID=<?php echo $moveid_ID?>";
+	</script>
+	<?php 
 	}
 }
 ?>

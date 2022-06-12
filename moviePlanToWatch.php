@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 $id=$_SESSION['id'];
-$query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.mRating, movie.id 
+$query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.mIcon, movie.mRating, movie.id 
                                   FROM rating 
                                   INNER JOIN movie ON rating.movie_ID = movie.id 
                                   WHERE accounts_ID=$id and userStatus='Plan to Watch'");
@@ -53,6 +53,7 @@ $query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.m
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Title</th>
                             <th>Total rating</th>
                             <th>Your rating</th>
@@ -60,6 +61,7 @@ $query=mysqli_query($connection, "SELECT rating.userRating, movie.mName, movie.m
                     </thead>
                         <?php while ($row = mysqli_fetch_array($query)) { ?>
                             <tr>
+                                <td><a class="movieIconImage" href="movie.php?movie_ID=<?php echo $row['id']; ?>"><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['mIcon']); ?>" /></a></td>
                                 <td><a href="movie.php?movie_ID=<?php echo $row['id']; ?>"><?php echo $row['mName']; ?></a></td>
                                 <td><?php echo $row['mRating']; ?></td>
                                 <td><?php echo $row['userRating']; ?></td>

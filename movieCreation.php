@@ -1,5 +1,11 @@
 <?php 
+session_start();
 include('server.php');
+
+if (!isset($_SESSION['username'])) {
+    	$_SESSION['msg'] = "You must log in first";
+    	header('location: login.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +30,7 @@ include('server.php');
 
 			<!------ Options ------>
 			<div class="creationTopnav">
-				<a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+				<a href="index.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
 			</div>
 			<div class="space"><span style="opacity:0;">.</span></div>
 		</div>
@@ -32,9 +38,9 @@ include('server.php');
 		<!-- New Record -->
 		<div class="creationFormMovie">
 			<h1>New movie record</h1>
-			<form action="#" method="post">
+			<form action="#" method="post" enctype="multipart/form-data">
 				<div>
-					<input class="creationIcon" type="file" name="mIcon" placeholder="Icon" value="<?php echo $row['mIcon']; ?>" >
+					<input class="creationIcon" type="file" name="mIcon" placeholder="Icon" value="" >
 				</div>
 
 				<div>
@@ -47,6 +53,10 @@ include('server.php');
 
                 <div>
 					<input type="text" name="mDirector" placeholder="Director" value="<?php echo $row['mDirector']; ?>">
+				</div>
+
+				<div>
+					<input type="date" name="mReleaseDate" placeholder="Release date" value="<?php echo $row['gReleaseDate']; ?>">
 				</div>
 				
 				<button type="submit" class="creationMovieButtonSubmit" name="createRecord">Create</button>
@@ -61,22 +71,35 @@ include('server.php');
 <?php
 if(isset($_POST['createRecord']))
 {	 
-	$mIcon = $_POST['mIcon'];
 	$mName = $_POST['mName'];
     $mDescription = $_POST['mDescription'];
 	$mDirector = $_POST['mDirector'];
+	$mReleaseDate = $_POST['mReleaseDate'];
 
-	$sql = "INSERT INTO movie (mIcon,mName,mDescription,mDirector)
-	VALUES ('$mIcon','$mName','$mDescription','$mDirector')";
-	if (mysqli_query($connection, $sql)) {
-		echo "New record created!";
-	} else {
-		echo "Error: " . $sql . " " . mysqli_error($connection);
-	}
-	?>
-	<script type="text/javascript">
-		window.location = "index.php";
-	</script>
-	<?php
+	if(!empty($_FILES["mIcon"]["name"])) { 
+        // Get file info 
+        $fileName = basename($_FILES["mIcon"]["name"]); 
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+         
+        // Allow certain file formats 
+        $allowTypes = array('jpg','png','jpeg','gif'); 
+        if(in_array($fileType, $allowTypes)){ 
+            $image = $_FILES['mIcon']['tmp_name']; 
+            $imgContent = addslashes(file_get_contents($image)); 
+
+			$sql = "INSERT INTO movie (mIcon,mName,mDescription,mDirector,mReleaseDate)
+			VALUES ('$imgContent','$mName','$mDescription','$mDirector','$mReleaseDate')";
+			if (mysqli_query($connection, $sql)) {
+				echo "New record created!";
+			} else {
+				echo "Error: " . $sql . " " . mysqli_error($connection);
+			}
+			?>
+			<script type="text/javascript">
+				window.location = "index.php";
+			</script>
+			<?php 
+        }
+    }
 }
 ?>

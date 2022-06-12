@@ -24,7 +24,7 @@ include('server.php');
 
 			<!------ Options ------>
 			<div class="creationTopnav">
-				<a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+				<a href="index.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
 			</div>
 			<div class="space"><span style="opacity:0;">.</span></div>
 		</div>
@@ -32,9 +32,9 @@ include('server.php');
 		<!-- New Record -->
 		<div class="creationFormSeries">
 			<h1>New series record</h1>
-			<form action="#" method="post">
+			<form action="#" method="post" enctype="multipart/form-data">
 				<div>
-					<input class="creationIcon" type="file" name="sIcon" placeholder="Icon" value="<?php echo $row['sIcon']; ?>" >
+					<input class="creationIcon" type="file" name="sIcon" placeholder="Icon" value="" >
 				</div>
 
 				<div>
@@ -51,6 +51,10 @@ include('server.php');
 
 				<div>
 					<input type="number" name="sEpisodes" placeholder="Number of episodes" value="<?php echo $row['sEpisodes']; ?>">
+				</div>
+
+				<div>
+					<input type="date" name="releaseDate" placeholder="Release date" value="<?php echo $row['sReleaseDate']; ?>">
 				</div>
 				
 				<button type="submit" class="creationSeriesButtonSubmit" name="createRecord">Create</button>
@@ -70,18 +74,33 @@ if(isset($_POST['createRecord']))
     $sEpisodes = $_POST['sEpisodes'];
     $sDescription = $_POST['sDescription'];
 	$sDirector = $_POST['sDirector'];
+	$sReleaseDate = $_POST['releaseDate'];
 
-	$sql = "INSERT INTO series (sIcon,sName,sDescription,sDirector)
-	VALUES ('$sIcon','$sName','$sDescription','$sDirector')";
-	if (mysqli_query($connection, $sql)) {
-		echo "New record created!";
-	} else {
-		echo "Error: " . $sql . " " . mysqli_error($connection);
+
+if(!empty($_FILES["sIcon"]["name"])) { 
+	// Get file info 
+	$fileName = basename($_FILES["sIcon"]["name"]); 
+	$fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+	 
+	// Allow certain file formats 
+	$allowTypes = array('jpg','png','jpeg','gif'); 
+	if(in_array($fileType, $allowTypes)){ 
+		$image = $_FILES['sIcon']['tmp_name']; 
+		$imgContent = addslashes(file_get_contents($image)); 
+
+			$sql = "INSERT INTO series (sIcon,sName,sDescription,sDirector,sReleaseDate)
+			VALUES ('$imgContent','$sName','$sDescription','$sDirector','$sReleaseDate')";
+			if (mysqli_query($connection, $sql)) {
+				echo "New record created!";
+			} else {
+				echo "Error: " . $sql . " " . mysqli_error($connection);
+			}
+			?>
+			<script type="text/javascript">
+				window.location = "index.php";
+			</script>
+			<?php
+		}
 	}
-	?>
-	<script type="text/javascript">
-		window.location = "index.php";
-	</script>
-	<?php
 }
 ?>

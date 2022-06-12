@@ -23,6 +23,7 @@ body {
     text-align: center;
     color: white;
     font-size: 50px;
+    width: 100%;
 }
 
 .indexLogoContainer h1 {
@@ -333,12 +334,16 @@ body {
     }
 
     .showMoviesButton{
-        width: 15%;
+        width: 30%;
     }
     .showGamesButton{
-        width: 15%;
+        width: 30%;
     }
     .showSeriesButton{
-        width: 15%;
+        width: 30%;
+    }
+
+    .indexLogoContainer h1 {
+        font-size: 32px;
     }
   }

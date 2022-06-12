@@ -21,6 +21,7 @@
     text-align: center;
     color: white;
     font-size: 50px;
+    width: auto;
 }
 .seriesLogoContainer h1 {
     background: transparent;
@@ -106,6 +107,12 @@
 }
 .seriesIconImage:hover{
     border: 1px solid rgb(0, 209, 224);
+}
+
+.seriesIconImage img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
 }
 .seriesName{
     display: flex;
@@ -293,6 +300,9 @@
         padding-left: 0px;
     }
 
+    .seriesLogoContainer h1 {
+        font-size: 32px;
+    }
     .seriesTopBoxLeft{
         flex-direction: column;
         border-right: 0px solid rgb(156, 156, 156);

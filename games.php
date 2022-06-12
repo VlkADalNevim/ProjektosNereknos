@@ -65,7 +65,9 @@ $id=$_SESSION['id'];
 		<div class="gameTopBox">
 			<div class="gameTopBoxLeft">
 				<div class="gameIcon">
-					<a class="gameIconImage">*Image* <?= $row['gIcon'] ?></a> 
+					<a class="gameIconImage">
+						<img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['gIcon']); ?>" />
+					</a> 
 				</div>
 
 				<div class="gameName">
@@ -155,7 +157,7 @@ $id=$_SESSION['id'];
 
             <div class="gameAddInfo">
                 <p>Author: <a><?= $row['gAuthor'] ?></a></p>
-				<p>---: <a><?= $row['---'] ?></a></p>
+				<p>Release date: <a><?= $row['gReleaseDate'] ?></a></p>
 				<p>---: <a><?= $row['---'] ?></a></p>
 				<p>---: <a><?= $row['---'] ?></a></p>
 			</div>
@@ -210,7 +212,11 @@ if($count == 0){
     $updateaveragequery = "UPDATE games SET gRating='$averageRating' where id='$games_ID'";
     mysqli_query($connection,$updateaveragequery);
 
-   header("Refresh:0");
+	?>
+	<script type="text/javascript">
+		window.location = "games.php?games_ID=<?php echo $gamees_ID?>";
+	</script>
+	<?php 
 	}
 }
 ?>

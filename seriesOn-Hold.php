@@ -53,6 +53,7 @@ $query=mysqli_query($connection, "SELECT seriesRating.userSeriesEpisodes, series
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Title</th>
                             <th>Total rating</th>
                             <th>Your rating</th>
@@ -61,6 +62,7 @@ $query=mysqli_query($connection, "SELECT seriesRating.userSeriesEpisodes, series
                     </thead>
                         <?php while ($row = mysqli_fetch_array($query)) { ?>
                             <tr>
+                                <td><a class="seriesIconImage" href="series.php?series_ID=<?php echo $row['id']; ?>"><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['sIcon']); ?>" /></a></td>
                                 <td><a href="series.php?series_ID=<?php echo $row['id']; ?>"><?php echo $row['sName']; ?></a></td>
                                 <td><?php echo $row['sRating']; ?></td>
                                 <td><?php echo $row['userSeriesRating']; ?></td>

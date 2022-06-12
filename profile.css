@@ -23,6 +23,7 @@ body {
     text-align: center;
     color: white;
     font-size: 50px;
+    width: 100%;
 }
 .profileLogoContainer h1 {
     background: transparent;
@@ -58,7 +59,111 @@ body {
 
 /*------ Content ------*/
 
+.profileAll{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+.profileAccount{
+    border-bottom: 1px solid rgb(116, 116, 116);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 200px;
+    padding-right: 20px;
+}
+.profileAccountImage{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border: 1px solid rgb(116, 116, 116);
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+    color: rgb(129, 129, 129);
+    overflow: auto;
+}
+.profileAccountImage:hover{
+    border: 1px solid rgb(0, 209, 224);
+}
+.profileAccountImage img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.profileAccountName{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+}
+.profileAccountName h2{
+    padding-left: 200px;
+    font-size: 50px;
+}
+
 .profileContent{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.profileContentStats{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.statsEntertainmentMovies{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.statsEntertainmentSeries{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.statsEntertainmentGames{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.statsEntertainmentMovies h2{
+    font-size: 25px;
+    color: white;
+    border-bottom: 1px solid rgb(0, 255, 255, 0.5);
+}
+.statsEntertainmentSeries h2{
+    font-size: 25px;
+    color: white;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.5);
+}
+.statsEntertainmentGames h2{
+    font-size: 25px;
+    color: white;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+.profileContentStats a{
+    font-size: 20px;
+    color: rgb(214, 214, 214);
+}
+.profileContentStats h1{
+    text-align: center;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+}
+.profileContentData{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -66,6 +171,7 @@ body {
     padding-bottom: 60px;
     padding-right: 60px;
     padding-left: 60px;
+    width: 80%;
 }
 
 .profileLeft{
@@ -169,8 +275,11 @@ body {
 
 @media only screen and (max-width: 620px) {
     /* For mobile phones: */
-    .profileContent{
+    .profileContentData{
         flex-direction: column;
+    }
+    .profileLogoContainer h1 {
+        font-size: 32px;
     }
     
   }

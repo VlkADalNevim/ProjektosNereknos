@@ -21,6 +21,7 @@
     text-align: center;
     color: white;
     font-size: 50px;
+    width: auto;
 }
 .gameLogoContainer h1 {
     background: transparent;
@@ -106,6 +107,12 @@
 }
 .gameIconImage:hover{
     border: 1px solid rgb(0, 209, 224);
+}
+
+.gameIconImage img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
 }
 .gameName{
     display: flex;
@@ -280,6 +287,10 @@
         padding-top: 0px;
         padding-bottom: 0px;
         padding-left: 0px;
+    }
+
+    .gameLogoContainer h1 {
+        font-size: 32px;
     }
 
     .gameTopBoxLeft{

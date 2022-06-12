@@ -21,6 +21,7 @@
     text-align: center;
     color: white;
     font-size: 50px;
+    width: auto;
 }
 
 .loginLogoContainer h1 {
@@ -71,7 +72,7 @@
     border-radius: 20px;
     margin: auto;
     width: 25%;
-    height: 250px;
+    height: 300px;
 }
 
 .loginForm h1{
@@ -150,6 +151,7 @@
     text-align: center;
     color: white;
     font-size: 50px;
+    width: auto;
 }
 .registerLogoContainer h1 {
     background: transparent;
@@ -277,4 +279,10 @@
     .registerForm {
         width: 70%;
       }
+    .loginLogoContainer h1 {
+        font-size: 32px;
+    }
+    .registerLogoContainer h1 {
+        font-size: 32px;
+    }
   }

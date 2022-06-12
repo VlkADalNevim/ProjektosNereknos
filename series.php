@@ -66,7 +66,9 @@ $id=$_SESSION['id'];
 		<div class="seriesTopBox">
 			<div class="seriesTopBoxLeft">
 				<div class="seriesIcon">
-					<a class="seriesIconImage">*Image* <?= $row['sIcon'] ?></a> 
+					<a class="seriesIconImage">
+						<img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['sIcon']); ?>" />
+					</a> 
 				</div>
 
 				<div class="seriesName">
@@ -211,7 +213,11 @@ if($count == 0){
     $updateaveragequery = "UPDATE series SET sRating='$averageRating' where id='$series_ID'";
     mysqli_query($connection,$updateaveragequery);
 
-   header("Refresh:0");
+	?>
+	<script type="text/javascript">
+		window.location = "series.php?series_ID=<?php echo $seriees_ID?>";
+	</script>
+	<?php 
 	}
 }
 ?>

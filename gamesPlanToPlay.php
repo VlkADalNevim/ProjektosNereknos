@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 $id=$_SESSION['id'];
-$query=mysqli_query($connection, "SELECT gamesRating.userGameRating, games.gName, games.gRating, games.id 
+$query=mysqli_query($connection, "SELECT gamesRating.userGameRating, games.gName, games.gIcon, games.gRating, games.id 
                                   FROM gamesRating 
                                   INNER JOIN games ON gamesRating.games_ID = games.id 
                                   WHERE accountsGames_ID=$id and userGameStatus='Plan to Play'");
@@ -53,6 +53,7 @@ $query=mysqli_query($connection, "SELECT gamesRating.userGameRating, games.gName
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Title</th>
                             <th>Total rating</th>
                             <th>Your rating</th>
@@ -61,6 +62,7 @@ $query=mysqli_query($connection, "SELECT gamesRating.userGameRating, games.gName
                     </thead>
                         <?php while ($row = mysqli_fetch_array($query)) { ?>
                             <tr>
+                                <td><a class="gamesIconImage" href="games.php?games_ID=<?php echo $row['id']; ?>"><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['gIcon']); ?>" /></a></td>
                                 <td><a href="games.php?games_ID=<?php echo $row['id']; ?>"><?php echo $row['gName']; ?></a></td>
                                 <td><?php echo $row['gRating']; ?></td>
                                 <td><?php echo $row['userGameRating']; ?></td>

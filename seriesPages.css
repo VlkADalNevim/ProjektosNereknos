@@ -23,6 +23,7 @@ body {
     text-align: center;
     color: white;
     font-size: 50px;
+    width: auto;
 }
 .seriesPagesLogoContainer h1 {
     background: transparent;
@@ -86,6 +87,29 @@ body {
     margin: 20px;
 }
 
+.seriesIconImage{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    border: 1px solid rgb(116, 116, 116);
+    border-radius: 10px;
+    height: 200px;
+    width: 132px;
+    overflow: auto;
+}
+.seriesIconImage:hover{
+    border: 1px solid rgb(0, 209, 224);
+}
+
+.seriesPagesTable img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
 .seriesPagesTable table{
     text-align: center;
     background-color: #4b4b4b;
@@ -99,7 +123,7 @@ body {
     font-size: 20px;
     font-weight: bold;
     color: white;
-    width: 25%;
+    width: 20%;
 }
 .seriesPagesTable td {
     background-color: #4b4b4b;
@@ -124,4 +148,68 @@ body {
     background-color: #3f3f3f;
     border-top: 1px solid rgb(224, 224, 224);
     border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+
+@media only screen and (max-width: 1280px) {
+    /* For mobile phones: */
+    .seriesIconImage{
+        height: 150px;
+        width: 99px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    /* For mobile phones: */
+    .seriesIconImage{
+        height: 100px;
+        width: 66px;
+    }
+    .seriesPagesTable table{
+        padding: 0px;
+    }
+    .seriesPagesLogoContainer h1 {
+        font-size: 32px;
+    }
+    .seriesPagesContent {
+
+        width: 100%;
+    }
+    .seriesPagesTitle{
+        padding-left: 50px;
+        font-size: 30px;
+    }
+
+    .seriesPagesTable th {
+        font-size: 14px;
+        width: 20%;
+    }
+    .seriesPagesTable td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .seriesPagesTable a {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    /* For mobile phones: */
+    .seriesPagesTitle{
+        font-size: 27px;
+    }
+    .seriesIconImage{
+        height: 65px;
+        width: 42px;
+    }
+    .seriesPagesTable td {
+        padding: 10px;
+    }
+    .seriesPagesTable th {
+        font-size: 13px;
+    }
+    .seriesPagesTable a {
+        font-size: 11px;
+    }
 }

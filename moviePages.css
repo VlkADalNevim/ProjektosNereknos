@@ -23,6 +23,7 @@ body {
     text-align: center;
     color: white;
     font-size: 50px;
+    width: 100%;
 }
 .moviePagesLogoContainer h1 {
     background: transparent;
@@ -93,17 +94,42 @@ body {
     width: 100%;
 }
 
+
+.movieIconImage{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    border: 1px solid rgb(116, 116, 116);
+    border-radius: 10px;
+    height: 200px;
+    width: 132px;
+    overflow: auto;
+}
+.movieIconImage:hover{
+    border: 1px solid rgb(0, 209, 224);
+}
+
+.moviePagesTable img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
 .moviePagesTable th {
     background-color: #4b4b4b;
     border-bottom: 2px solid rgb(173, 173, 173);
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     color: white;
-    width: 33%;
+    width: 25%;
 }
 .moviePagesTable td {
     background-color: #4b4b4b;
     padding: 20px;
+    font-size: 20px;
     color: #ddd;
 }
 
@@ -128,3 +154,66 @@ body {
 }
 
 
+@media only screen and (max-width: 1280px) {
+    /* For mobile phones: */
+    .movieIconImage{
+        height: 150px;
+        width: 99px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    /* For mobile phones: */
+    .movieIconImage{
+        height: 100px;
+        width: 66px;
+    }
+    .moviePagesTable table{
+        padding: 0px;
+    }
+    .moviePagesLogoContainer h1 {
+        font-size: 32px;
+    }
+    .moviePagesContent {
+
+        width: 100%;
+    }
+    .moviePagesTitle{
+        padding-left: 50px;
+        font-size: 30px;
+    }
+
+    .moviePagesTable th {
+        font-size: 14px;
+        width: 25%;
+    }
+    .moviePagesTable td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .moviePagesTable a {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    /* For mobile phones: */
+    .moviePagesTitle{
+        font-size: 27px;
+    }
+    .movieIconImage{
+        height: 65px;
+        width: 42px;
+    }
+    .seriesPagesTable td {
+        padding: 10px;
+    }
+    .moviePagesTable th {
+        font-size: 13px;
+        width: 20%;
+    }
+    .moviePagesTable a {
+        font-size: 11px;
+    }
+}
