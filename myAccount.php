@@ -48,7 +48,7 @@ if (!isset($_SESSION['username'])) {
 			<form action="#" method="post" enctype="multipart/form-data">
 				<div>
                     <label for="aIcon">User icon:</label>
-					<input type="file" name="aIcon" style="text-transform: capitalize;" class="creationIcon" placeholder="Icon" value="<?php echo $row['mIcon']; ?>" >
+					<input type="file" name="aIcon" style="text-transform: capitalize;" class="creationIcon" placeholder="Icon" value="" >
 				</div>
 
 				<div>

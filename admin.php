@@ -39,12 +39,10 @@
 
 
         <div class="adminBox">
-            <div class="accounts">
-                <a>Accounts</a>
-            </div>
 
             <div class="createAndSearch">
                 <div class="createNew">
+                    <h2>New Record</h2>
                     <div class="newMovie">
                         <a href="movieCreation.php">MOVIE</a>
                     </div>
@@ -85,6 +83,9 @@
 	</body>
 </html>
 
+
+
+
 <script>
 function myFunctionMovies() {
   var x = document.getElementById("searchMovies");
@@ -119,4 +120,93 @@ function myFunctionSeries() {
     x.style.display = "none";
   }
 }
+</script>
+<!--Movies AJAX-->
+<script>
+	$(document).ready(function(){
+		load_data();
+		function load_data(query)
+		{
+			$.ajax({
+			url:"movieUpdateSearch.php",
+			method:"POST",
+			data:{query:query},
+			success:function(data)
+			{
+				$('#result').html(data);
+			}
+			});
+		}
+		$('#searchMovies').keyup(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			load_data(search);
+		}
+		else
+		{
+			load_data();
+		}
+		});
+	});
+</script>
+
+<!--Games AJAX-->
+<script>
+	$(document).ready(function(){
+		load_data();
+		function load_data(query)
+		{
+			$.ajax({
+			url:"gameUpdateSearch.php",
+			method:"POST",
+			data:{query:query},
+			success:function(data)
+			{
+				$('#result').html(data);
+			}
+			});
+		}
+		$('#searchGames').keyup(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			load_data(search);
+		}
+		else
+		{
+			load_data();
+		}
+		});
+	});
+</script>
+
+<!--Series AJAX-->
+<script>
+	$(document).ready(function(){
+		load_data();
+		function load_data(query)
+		{
+			$.ajax({
+			url:"seriesUpdateSearch.php",
+			method:"POST",
+			data:{query:query},
+			success:function(data)
+			{
+				$('#result').html(data);
+			}
+			});
+		}
+		$('#searchSeries').keyup(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			load_data(search);
+		}
+		else
+		{
+			load_data();
+		}
+		});
+	});
 </script>

@@ -24,7 +24,7 @@ include('server.php');
 
 			<!------ Options ------>
 			<div class="creationTopnav">
-				<a href="index.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
+				<a href="admin.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
 			</div>
 			<div class="space"><span style="opacity:0;">.</span></div>
 		</div>
@@ -69,13 +69,11 @@ include('server.php');
 <?php
 if(isset($_POST['createRecord']))
 {	 
-	$sIcon = $_POST['sIcon'];
 	$sName = $_POST['sName'];
     $sEpisodes = $_POST['sEpisodes'];
     $sDescription = $_POST['sDescription'];
 	$sDirector = $_POST['sDirector'];
-	$sReleaseDate = $_POST['releaseDate'];
-
+	$sReleaseDate = $_POST['sReleaseDate'];
 
 if(!empty($_FILES["sIcon"]["name"])) { 
 	// Get file info 
@@ -88,19 +86,33 @@ if(!empty($_FILES["sIcon"]["name"])) {
 		$image = $_FILES['sIcon']['tmp_name']; 
 		$imgContent = addslashes(file_get_contents($image)); 
 
-			$sql = "INSERT INTO series (sIcon,sName,sDescription,sDirector,sReleaseDate)
-			VALUES ('$imgContent','$sName','$sDescription','$sDirector','$sReleaseDate')";
-			if (mysqli_query($connection, $sql)) {
-				echo "New record created!";
-			} else {
-				echo "Error: " . $sql . " " . mysqli_error($connection);
-			}
-			?>
-			<script type="text/javascript">
-				window.location = "index.php";
-			</script>
-			<?php
+		$sql = "INSERT INTO series (sIcon,sName,sDescription,sDirector,sReleaseDate,sEpisodes)
+		VALUES ('$imgContent','$sName','$sDescription','$sDirector','$sReleaseDate','$sEpisodes')";
+		if (mysqli_query($connection, $sql)) {
+			echo "New record created!";
+		} else {
+			echo "Error: " . $sql . " " . mysqli_error($connection);
 		}
+		?>
+		<script type="text/javascript">
+			window.location = "admin.php";
+		</script>
+		<?php 
+	}
+}
+if(empty($_FILES["sIcon"]["name"])) { 
+		$sql = "INSERT INTO series (sIcon,sName,sDescription,sDirector,sReleaseDate,sEpisodes)
+		VALUES ('$imgContent','$sName','$sDescription','$sDirector','$sReleaseDate','$sEpisodes')";
+		if (mysqli_query($connection, $sql)) {
+			echo "New record created!";
+		} else {
+			echo "Error: " . $sql . " " . mysqli_error($connection);
+		}
+		?>
+		<script type="text/javascript">
+			window.location = "admin.php";
+		</script>
+		<?php 
 	}
 }
 ?>

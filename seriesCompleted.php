@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 $id=$_SESSION['id'];
-$query=mysqli_query($connection, "SELECT seriesRating.userSeriesEpisodes, seriesRating.userSeriesRating, series.sName, series.sRating, series.sEpisodes, series.id 
+$query=mysqli_query($connection, "SELECT seriesRating.userSeriesEpisodes, series.sIcon, seriesRating.userSeriesRating, series.sName, series.sRating, series.sEpisodes, series.id 
                                   FROM seriesRating 
                                   INNER JOIN series ON seriesRating.series_ID = series.id 
                                   WHERE accountsSeries_ID=$id and userSeriesStatus='Completed'");

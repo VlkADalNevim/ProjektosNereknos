@@ -24,7 +24,7 @@ include('server.php');
 
 			<!------ Options ------>
 			<div class="creationTopnav">
-				<a href="index.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
+				<a href="admin.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
 			</div>
 			<div class="space"><span style="opacity:0;">.</span></div>
 		</div>
@@ -68,32 +68,46 @@ if(isset($_POST['createRecord']))
 	$gName = $_POST['gName'];
     $gDescription = $_POST['gDescription'];
 	$gAuthor = $_POST['gAuthor'];
-	$gReleaseDate = $_POST['releaseDate'];
+	$gReleaseDate = $_POST['gReleaseDate'];
 
-	if(!empty($_FILES["gIcon"]["name"])) { 
-        // Get file info 
-        $fileName = basename($_FILES["gIcon"]["name"]); 
-        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
-         
-        // Allow certain file formats 
-        $allowTypes = array('jpg','png','jpeg','gif'); 
-        if(in_array($fileType, $allowTypes)){ 
-            $image = $_FILES['gIcon']['tmp_name']; 
-            $imgContent = addslashes(file_get_contents($image)); 
+if(!empty($_FILES["gIcon"]["name"])) { 
+	// Get file info 
+	$fileName = basename($_FILES["gIcon"]["name"]); 
+	$fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+	 
+	// Allow certain file formats 
+	$allowTypes = array('jpg','png','jpeg','gif'); 
+	if(in_array($fileType, $allowTypes)){ 
+		$image = $_FILES['gIcon']['tmp_name']; 
+		$imgContent = addslashes(file_get_contents($image)); 
 
-			$sql = "INSERT INTO games (gIcon,gName,gDescription,gAuthor,gReleaseDate)
-			VALUES ('$imgContent','$gName','$gDescription','$gAuthor','$gReleaseDate')";
-			if (mysqli_query($connection, $sql)) {
-				echo "New record created!";
-			} else {
-				echo "Error: " . $sql . " " . mysqli_error($connection);
-			}
-			?>
-			<script type="text/javascript">
-				window.location = "index.php";
-			</script>
-			<?php
+		$sql = "INSERT INTO games (gIcon,gName,gDescription,gAuthor,gReleaseDate)
+		VALUES ('$imgContent','$gName','$gDescription','$gAuthor','$gReleaseDate')";
+		if (mysqli_query($connection, $sql)) {
+			echo "New record created!";
+		} else {
+			echo "Error: " . $sql . " " . mysqli_error($connection);
 		}
+		?>
+		<script type="text/javascript">
+			window.location = "admin.php";
+		</script>
+		<?php 
+	}
+}
+if(empty($_FILES["gIcon"]["name"])) { 
+	$sql = "INSERT INTO games (gIcon,gName,gDescription,gAuthor,gReleaseDate)
+	VALUES ('$imgContent','$gName','$gDescription','$gAuthor','$gReleaseDate')";
+	if (mysqli_query($connection, $sql)) {
+		echo "New record created!";
+	} else {
+		echo "Error: " . $sql . " " . mysqli_error($connection);
+	}
+	?>
+	<script type="text/javascript">
+		window.location = "admin.php";
+	</script>
+	<?php 
 	}
 }
 ?>

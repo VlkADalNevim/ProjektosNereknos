@@ -30,7 +30,7 @@ if (!isset($_SESSION['username'])) {
 
 			<!------ Options ------>
 			<div class="creationTopnav">
-				<a href="index.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
+				<a href="admin.php"><i class="fa-solid fa-arrow-left" style="background:transparent;"></i></a>
 			</div>
 			<div class="space"><span style="opacity:0;">.</span></div>
 		</div>
@@ -76,30 +76,44 @@ if(isset($_POST['createRecord']))
 	$mDirector = $_POST['mDirector'];
 	$mReleaseDate = $_POST['mReleaseDate'];
 
-	if(!empty($_FILES["mIcon"]["name"])) { 
-        // Get file info 
-        $fileName = basename($_FILES["mIcon"]["name"]); 
-        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
-         
-        // Allow certain file formats 
-        $allowTypes = array('jpg','png','jpeg','gif'); 
-        if(in_array($fileType, $allowTypes)){ 
-            $image = $_FILES['mIcon']['tmp_name']; 
-            $imgContent = addslashes(file_get_contents($image)); 
+if(!empty($_FILES["mIcon"]["name"])) { 
+	// Get file info 
+	$fileName = basename($_FILES["mIcon"]["name"]); 
+	$fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+	 
+	// Allow certain file formats 
+	$allowTypes = array('jpg','png','jpeg','gif'); 
+	if(in_array($fileType, $allowTypes)){ 
+		$image = $_FILES['mIcon']['tmp_name']; 
+		$imgContent = addslashes(file_get_contents($image)); 
 
-			$sql = "INSERT INTO movie (mIcon,mName,mDescription,mDirector,mReleaseDate)
-			VALUES ('$imgContent','$mName','$mDescription','$mDirector','$mReleaseDate')";
-			if (mysqli_query($connection, $sql)) {
-				echo "New record created!";
-			} else {
-				echo "Error: " . $sql . " " . mysqli_error($connection);
-			}
-			?>
-			<script type="text/javascript">
-				window.location = "index.php";
-			</script>
-			<?php 
-        }
-    }
+		$sql = "INSERT INTO movie (mIcon,mName,mDescription,mDirector,mReleaseDate)
+		VALUES ('$imgContent','$mName','$mDescription','$mDirector','$mReleaseDate')";
+		if (mysqli_query($connection, $sql)) {
+			echo "New record created!";
+		} else {
+			echo "Error: " . $sql . " " . mysqli_error($connection);
+		}
+		?>
+		<script type="text/javascript">
+			window.location = "admin.php";
+		</script>
+		<?php 
+	}
+}
+if(empty($_FILES["mIcon"]["name"])) { 
+		$sql = "INSERT INTO movie (mIcon,mName,mDescription,mDirector,mReleaseDate)
+		VALUES ('$imgContent','$mName','$mDescription','$mDirector','$mReleaseDate')";
+		if (mysqli_query($connection, $sql)) {
+			echo "New record created!";
+		} else {
+			echo "Error: " . $sql . " " . mysqli_error($connection);
+		}
+		?>
+		<script type="text/javascript">
+			window.location = "admin.php";
+		</script>
+		<?php 
+	}
 }
 ?>

@@ -9,11 +9,22 @@
     if (mysqli_num_rows($result) > 0) {
         while ($res = mysqli_fetch_array($result)) {
         ?>
-          <a class="movieHref" href="games.php?games_ID=<?php echo $res['id']?>">
-            <div class="gameHrefContent">
-              <td><?php echo $res['gName']?></td>
-            </div>
-          </a>
+            <form method="POST" action="#" >
+                <div class="movieHrefContent">
+                  <table>
+                    <td>
+                      <a class="href" href="games.php?games_ID=<?php echo $res['id']?>">
+                          <?php echo $res['gName']?>
+                    </a>
+                    </td>
+                    <td>
+                      <a href="gameUpdate.php?games_ID=<?php echo $res['id']?>" class="updt_btn">
+                        UPDATE
+                      </a>
+                    </td>
+                  </table>
+                </div>
+            </form>
         <?php
       }
     } else {
